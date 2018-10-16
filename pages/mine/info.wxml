@@ -1,0 +1,165 @@
+<!--pages/mine/info.wxml-->
+<!-- 我的信息界面 -->
+
+<view class="info-page">
+
+  <view class='photo-box flex-center'>
+    <image src='{{userInfo.avatarurl}}' mode='aspectFill'></image>
+    <view class='upload-btn' hover-class='upload-btn-hover' bindtap='uploadImg'>上传照片</view>
+  </view>
+
+  <form bindsubmit="formCheck">
+
+    <view class='section-box'>
+      <view class="section">
+        <view class="section-title">姓名
+          <text>(必填)</text>
+        </view>
+        <input name="realname" value="{{userInfo.realname}}" placeholder="" />
+      </view>
+      <view class="section section-cal">
+        <view class="section-title">出生日期
+          <text>(必填)</text>
+        </view>
+        <picker name="birthday" mode="date" value="{{userInfo.birthday}}" start="1900-01-01" end="{{nowDate}}" data-index="userInfo.birthday" bindchange="pickerChange">
+          <view class="picker">
+            {{userInfo.birthday}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-gap">
+        <view class="section-title">性别
+          <text>(必填)</text>
+        </view>
+        <radio-group name="gender" class="sex-group flex-between" data-index="userInfo.gender" bindchange="pickerChange">
+          <label class="radio flex-center" wx:for="{{sex}}" wx:key="sex">
+            <view class="sex-status {{userInfo.gender == index ? 'sex-checked' : ''}}"></view>
+            <radio value="{{index}}" checked="{{userInfo.gender == index}}" />{{item}}
+          </label>
+        </radio-group>
+      </view>
+
+      <view class="section">
+        <view class="section-title">联系电话
+          <text>(必填)</text>
+        </view>
+        <input name="mobile" type="number" value='{{userInfo.mobile}}' placeholder="" />
+      </view>
+
+      <view class="section">
+        <view class="section-title">电子邮件
+          <text></text>
+        </view>
+        <input type="text" name="email" value="{{userInfo.email}}" placeholder="" />
+      </view>
+
+      <view class="section section-gap">
+        <view class="section-title">所在地区
+          <text>(必填)</text>
+        </view>
+        <picker name="region" mode="region" data-index="userInfo.region" bindchange="pickerChange" value="{{userInfo.region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            {{userInfo.region[0]}} {{userInfo.region[1]}} {{userInfo.region[2]}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="section">
+        <view class="section-title">详细地址
+          <text></text>
+        </view>
+        <input type="text" name="address"  value="{{userInfo.address}}" placeholder="" />
+      </view>
+    </view>
+
+
+    <!-- 宝妈宝爸 -->
+    <view class='section-box' wx:if="{{userInfo.role == 0}}">
+      <view class="section section-gap">
+        <view class="section-title">当前身份
+          <text>(必填)</text>
+        </view>
+        <picker name="role" bindchange="roleChange" value="{{userInfo.role}}" range="{{identity}}">
+          <view class="picker identity-picker">
+            {{identity[userInfo.role]}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-cal">
+        <view class="section-title">宝宝生日
+          <text>(必填)</text>
+        </view>
+        <picker name="babybirthday" mode="date" value="{{userInfo.babybirthday}}" start="2015-01-01" end="{{nowDate}}" data-index="userInfo.babybirthday" bindchange="pickerChange">
+          <view class="picker">
+            {{userInfo.babybirthday}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-gap">
+        <view class="section-title">宝宝性别
+          <text>(必填)</text>
+        </view>
+        <radio-group name="babygender" class="sex-group flex-between" data-index="userInfo.babygender" bindchange="pickerChange">
+          <label class="radio flex-center" wx:for="{{sex}}" wx:key="sex">
+            <view class="sex-status {{userInfo.babygender == index ? 'sex-checked' : ''}}"></view>
+            <radio value="{{index}}" checked="{{userInfo.babygender == index}}" />{{item}}
+          </label>
+        </radio-group>
+      </view>
+    </view>
+
+    <!-- 加盟 -->
+    <view class='section-box' wx:if="{{userInfo.role == 1}}">
+      <view class="section section-gap">
+        <view class="section-title">当前身份
+          <text>(必填)</text>
+        </view>
+        <picker name="role" bindchange="roleChange" value="{{userInfo.role}}" range="{{identity}}">
+          <view class="picker identity-picker">
+            {{identity[userInfo.role]}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-gap">
+        <view class="section-title">当前状态
+          <text>(必填)</text>
+        </view>
+        <picker name="joinstate" data-index="userInfo.joinstateIndex" bindchange="pickerChange" value=" {{joinstate[userInfo.joinstateIndex]}}" range="{{joinstate}}">
+          <view class="picker">
+            {{joinstate[userInfo.joinstateIndex]}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-gap">
+        <view class="section-title">预计投入
+          <text>(必填)</text>
+        </view>
+        <picker name="invest" data-index="userInfo.investIndex" bindchange="pickerChange" value=" {{invest[userInfo.investIndex]}}" range="{{invest}}">
+          <view class="picker">
+            {{invest[userInfo.investIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 求职 -->
+    <view class='section-box' wx:if="{{userInfo.role == 2}}">
+      <view class="section section-gap">
+        <view class="section-title">当前身份
+          <text>(必填)</text>
+        </view>
+        <picker name="role" bindchange="roleChange" value="{{userInfo.role}}" range="{{identity}}">
+          <view class="picker identity-picker">
+            {{identity[userInfo.role]}}
+          </view>
+        </picker>
+      </view>
+
+    </view>
+
+    <view class="btn-area">
+      <button formType="submit">保存</button>
+    </view>
+  </form>
+
+</view>

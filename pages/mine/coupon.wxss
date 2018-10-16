@@ -1,0 +1,63 @@
+.coupon-page {
+  padding-top: 20rpx;
+}
+
+.list-box {
+  background-color: white;
+  margin-bottom: 20rpx;
+  padding: 0 30rpx;
+}
+
+.item {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  justify-content: space-between;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.coupon-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 50rpx;
+  width: 120rpx;
+  height: 54rpx;
+}
+
+.btn-hover {
+  opacity: 0.7;
+}
+
+.improve-btn {
+  color: #666;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.gray-color {
+  color: #ccc;
+}
+
+.use-btn {
+  background-color: #fc6;
+}
+
+.get-btn {
+  background-color: #f96;
+}
+
+.disabled-use-btn {
+  background-color: #ccc;
+}

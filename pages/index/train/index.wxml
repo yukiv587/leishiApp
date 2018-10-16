@@ -1,0 +1,17 @@
+<!--pages/index/train/index.wxml-->
+<view class='train-page'>
+  <view class='nav'>
+    <navbar list='{{navs}}' navIndex='{{navIndex}}' bind:navChange="navChange"></navbar>
+  </view>
+
+  <view class='list'>
+    <view class='rich-content' wx:if='{{content}}'>
+      <rich-text nodes="{{content}}"></rich-text>
+      <view class='mask'></view>
+    </view>
+
+    <!-- 页面施工中 -->
+    <building wx:else></building>
+  </view>
+
+</view>

@@ -1,0 +1,7 @@
+<!--components/navbar.wxml-->
+
+<radio-group class="navbar radio-group" bindchange="_navChange">
+  <label class="radio {{navIndex == index ? 'cur' : ''}}" wx:for="{{list}}" wx:key="navs">
+    <radio value="{{index}}" checked="{{index==navIndex}}" />{{item}}
+  </label>
+</radio-group>

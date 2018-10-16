@@ -1,0 +1,68 @@
+<!--pages/store/detail.wxml-->
+
+<view class='store-detail-page'>
+
+  <view class="banner">
+    <image src='{{store.image}}' mode='aspectFill'></image>
+  </view>
+
+
+  <view class='info'>
+
+    <view class='title-box'>
+      <view class='title'>{{store.name}}</view>
+      <view class='goto' data-lat="{{store.lat}}" data-lng="{{store.lng}}" bindtap='showMap'>
+        <image src='../../images/store/goto.png' mode='widthFix'></image>
+        去这里</view>
+    </view>
+
+    <view class='desc'>
+      <text>营业时间：{{store.opentime}}</text>
+      <text>门店地址：{{store.address}}</text>
+    </view>
+
+  </view>
+
+  <view class='business'>
+    <view class='nav-box'>
+      <view class='nav-title'>
+        <image src='../../images/store/logo2.png' mode='widthFix'></image>
+        经营项目
+      </view>
+
+      <scroll-view scroll-x class='nav-group-box'>
+        <radio-group class="nav-group" bindchange="navChange">
+          <label class="radio {{catesId == item.id ? 'actived' : ''}}" wx:for="{{store.cates}}" wx:key="navs">
+            <radio value="{{item.id}}" checked="{{catesId == item.id}}" />{{item.name}}
+          </label>
+        </radio-group>
+      </scroll-view>
+
+
+
+    </view>
+
+    <view class='service-group'>
+      <view class='column-item hot-service-item' wx:for="{{services}}" wx:key="service" bindtap='link'>
+        <image src='{{mediaPrefix+item.image}}' mode='aspectFill'></image>
+        <view class='title'>{{item.name}}</view>
+        <view class='desc'>{{item.description}}</view>
+        <view class='price'>
+          <text>{{item.price}}元</text>起/60分钟</view>
+      </view>
+
+    </view>
+
+
+  </view>
+
+  <view class='reservation'>
+    <view class='tel-box'>
+      <image src='../../images/store/call-icon2.png' mode='widthFix'></image>
+      ： {{store.tel}}
+    </view>
+    <view class='call-btn' data-tel="{{store.tel}}" bindtap='makePhoneCall'>电话预约</view>
+  </view>
+
+
+</view>

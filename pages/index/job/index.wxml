@@ -1,0 +1,11 @@
+<!--pages/index/job/index.wxml-->
+
+<view class='job-page'>
+  <view class='rich-content' wx:if='{{content}}'>
+    <rich-text nodes="{{content}}"></rich-text>
+    <view class='mask'></view>
+  </view>
+
+  <!-- 页面施工中 -->
+  <building wx:else></building>
+</view>

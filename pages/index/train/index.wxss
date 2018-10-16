@@ -1,0 +1,14 @@
+/* pages/index/train/index.wxss */
+
+.nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.list {
+  padding-top: 104rpx;
+}
+

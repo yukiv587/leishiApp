@@ -1,0 +1,60 @@
+/* components/coupon.wxss */
+
+.coupon-modal {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.masker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 220rpx;
+}
+
+.modal-content image {
+  width: 480rpx;
+  height: 460rpx;
+}
+
+.image-box {
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  top: 280rpx;
+  left: 70rpx;
+  z-index: 999;
+  width: 348rpx;
+  text-align: center;
+  font-size: 50rpx;
+  color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-btn image {
+  width: 30rpx;
+  height: 30rpx;
+}

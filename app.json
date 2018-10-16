@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/about/contact",
+    "pages/index/about/about",
+    "pages/index/product/index",
+    "pages/index/product/detail",
+    "pages/index/train/index",
+    "pages/index/job/index",
+    "pages/index/service/index",
+    "pages/index/service/detail",
+    "pages/index/join/index",
+    "pages/login/identity",
+    "pages/login/register",
+    "pages/store/index",
+    "pages/store/detail",
+    "pages/mall/index",
+    "pages/mall/pay",
+    "pages/mine/mine",
+    "pages/mine/info",
+    "pages/mine/address",
+    "pages/mine/coupon",
+    "pages/mine/order",
+    "pages/mine/address-add",
+    "pages/mine/address-edit",
+    "components/building",
+    "components/navbar",
+    "components/service_group",
+    "components/coupon",
+    "pages/building/index",
+    "pages/logs/logs",
+    "pages/index/join/shop",
+    "pages/mine/order_logistics",
+    "pages/index/project/index",
+    "pages/index/project/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "雷氏普爱",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#b5b5b5",
+    "selectedColor": "#3eb26c",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar-icon1.png",
+        "selectedIconPath": "images/tabbar-icon1-1.png"
+      },
+      {
+        "pagePath": "pages/store/index",
+        "text": "门店",
+        "iconPath": "images/tabbar-icon2.png",
+        "selectedIconPath": "images/tabbar-icon2-1.png"
+      },
+      {
+        "pagePath": "pages/mall/index",
+        "text": "商城",
+        "iconPath": "images/tabbar-icon3.png",
+        "selectedIconPath": "images/tabbar-icon3-1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/tabbar-icon4.png",
+        "selectedIconPath": "images/tabbar-icon4-1.png"
+      }
+    ]
+  }
+}

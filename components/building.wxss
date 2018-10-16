@@ -1,0 +1,11 @@
+/* components/building.wxss */
+
+.building {
+  text-align: center;
+}
+
+.building image {
+  margin-top: 340rpx;
+  width: 320rpx;
+  height: auto;
+}

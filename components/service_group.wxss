@@ -1,0 +1,43 @@
+/* components/service_group.wxss */
+
+.service-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hot-service-item {
+  width: 316rpx;
+  margin-bottom: 32rpx;
+}
+
+.hot-service-item image {
+  width: 100%;
+  height: 244rpx;
+}
+
+.hot-service-item .title {
+  font-size: 30rpx;
+  padding: 10rpx 0 5rpx;
+}
+
+.hot-service-item .desc {
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 5rpx 0;
+}
+
+.hot-service-item .price {
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 5rpx 0;
+}
+
+.hot-service-item .price text {
+  font-size: 32rpx;
+  color: #eb6100;
+}

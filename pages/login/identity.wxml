@@ -1,0 +1,47 @@
+<!--pages/login/identity.wxml-->
+
+<view class="container identity-page">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+
+  <view class='choose-box' hidden='{{!hasUserInfo}}'>
+    <view class='masker'></view>
+
+    <view class='choose-body'>
+      <view class='choose-main'>
+        <view class='choose-title'>
+          请选择您的身份
+        </view>
+        <form bindsubmit="formSubmit" >
+
+          <view class="section section_gap">
+
+            <radio-group name="role_group" bindchange="roleChange">
+              <label wx:for='{{identity}}' wx:key="unique">
+                <image src='../../images/{{item.icon}}' mode='aspectFit'></image>
+                <radio value="{{index}}" checked="{{index == 0}}" />{{item.name}}
+
+                <view class='radio-icon selected-icon' hidden='{{identityIndex!=index}}'></view>
+                <view class='radio-icon' hidden='{{identityIndex==index}}'></view>
+              </label>
+            </radio-group>
+
+          </view>
+
+          <view class="btn-area">
+            <button formType="submit">下一步</button>
+          </view>
+        </form>
+      </view>
+
+    </view>
+  </view>
+</view>

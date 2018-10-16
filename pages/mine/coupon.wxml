@@ -1,0 +1,56 @@
+<!-- 优惠券 -->
+<view class='coupon-page'>
+
+  <view class='list-box'>
+    <view class='item flex-between'>
+      <view>我的优惠券
+        <text class='gray-color'>(不可叠加使用)</text>
+      </view>
+
+      <view>{{coupons.length || 0 }}张</view>
+    </view>
+
+    <view class='item' wx:for="{{coupons}}" wx:key="coupons">
+      <view class='icon-text'>
+        <image class='coupon-icon' src='../../images/coupon-icon.png' mode='aspectFit'></image>
+        <text>{{item.name}}</text>
+      </view>
+
+      <view wx:if='{{fromPay}}'>
+        <view class="btn use-btn flex-center" hover-class='btn-hover' data-id="{{item.id}}" bindtap='useCoupons' wx:if='{{item.canuse}}'>
+          去使用
+        </view>
+        <view class="btn disabled-use-btn flex-center"  wx:else>
+          去使用
+        </view>
+      </view>
+      <view class='btn use-btn flex-center' hover-class='btn-hover' bindtap='toMall' wx:else>去使用</view>
+
+    </view>
+
+  </view>
+
+  <view class='list-box' hidden>
+    <view class='item'>
+      <view>
+        任务：完善信息
+        <text class='gray-color'>(随机金额抵扣券)</text>
+      </view>
+
+      <view class='btn get-btn flex-center' hover-class='btn-hover'>领取</view>
+
+    </view>
+  </view>
+
+  <view class='list-box' hidden>
+    <view class='item'>
+      <view>
+        任务：完善信息
+        <text class='gray-color'>(奖励金额随机)</text>
+      </view>
+
+      <view class='btn improve-btn flex-center' hover-class='btn-hover'>去完善</view>
+
+    </view>
+  </view>
+</view>

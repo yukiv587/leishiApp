@@ -1,0 +1,31 @@
+<!--pages/index/join/index.wxml-->
+<view class='join-page'>
+  <view class='nav'>
+    <navbar id='navbar' list='{{navs}}' navIndex='{{navIndex}}' bind:navChange="navChange"></navbar>
+  </view>
+
+  <view class='tab content'>
+
+    <view class='shop-list' hidden='{{navIndex==0}}'>
+
+      <view hover-class="navigator-hover" wx:for="{{shops}}" wx:key="{{shop}}" data-content="{{item.content}}" bindtap='toDatail'>
+        <image src='../../../images/index/join-img{{index+1}}.png'></image>
+      </view>
+      <image src='../../../images/index/join-img4.png'></image>
+
+    </view>
+
+    <view class='rich-content'>
+      <rich-text nodes="{{navsContent[navIndex].content}}"></rich-text>
+      <view class='mask'></view>
+    </view>
+
+
+    <view class='btn-area'>
+      <view class='tel-btn' hover-class="tel-hover" bindtap='makePhoneCall'>
+        <image src='../../../images/index/tel-icon.png' mode='widthFix'></image>立刻电话咨询</view>
+    </view>
+
+  </view>
+
+</view>

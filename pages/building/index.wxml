@@ -1,0 +1,5 @@
+<!--pages/building/index.wxml-->
+
+<view class='building-page'>
+  <building></building>
+</view>

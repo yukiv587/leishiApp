@@ -1,0 +1,134 @@
+/* pages/mall/pay.wxss */
+
+.pay-page {
+}
+
+.address-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 0 28rpx;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.address-box .top .attr-name {
+  color: #b0b0b0;
+}
+
+.address-box .top {
+  width: 100%;
+  height: 106rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.red-point {
+  width: 28rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+
+.change-address-btn {
+  color: #999;
+  margin-left: 50rpx;
+}
+
+.address-box .bottom {
+  padding: 30rpx 0;
+}
+
+.address-box .tel {
+  margin-bottom: 28rpx;
+}
+
+.column-item {
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  padding: 0 30rpx;
+  height: 100rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.column-item .attr-name {
+  color: #a1a1a1;
+}
+
+.column-item .attr-arrow::after {
+  content: " ";
+  display: inline-block;
+  height: 16rpx;
+  width: 16rpx;
+  border-width: 1px 1px 0 0;
+  border-color: #333;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  margin-left: 10rpx;
+}
+
+.attr-wechat {
+  margin-right: 20rpx;
+}
+
+.attr-wechat image {
+  width: 38rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.attr-discount image {
+  width: 40rpx;
+  height: 32rpx;
+  margin-right: 12rpx;
+}
+
+.order-list-box {
+  background-color: #fff;
+  padding: 0 30rpx;
+  position: fixed;
+  bottom: 110rpx;
+  left: 0;
+  z-index: 99;
+  box-sizing: border-box;
+  border-top: 1px solid #ededed;
+  width: 100%;
+}
+
+.order-item {
+  font-size: 30rpx;
+  padding: 10rpx 0;
+}
+
+.goods-name {
+  flex-shrink: 0;
+  width: 50%;
+}
+
+.goods-price {
+  flex-shrink: 0;
+  width: 30%;
+  text-align: right;
+}
+
+.order-discount text text {
+  color: #fe7070;
+}
+
+.arrow-btn-box {
+  padding: 20rpx 0;
+}
+
+.order-list-box .arrow-btn {
+  width: 0;
+  height: 0;
+  border-left: 16rpx solid transparent;
+  border-right: 16rpx solid transparent;
+  border-top: 16rpx solid #42be73;
+}
+
+.order-list {
+  padding-bottom: 20rpx;
+  max-height: 500rpx;
+  transition: all 3s;
+}

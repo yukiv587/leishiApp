@@ -1,0 +1,70 @@
+/* pages/mine/address.wxss */
+
+.item {
+  padding: 30rpx 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #e8e8e8;
+  background: white;
+}
+
+.item-content {
+  flex-grow: 1;
+  padding-right: 26rpx;
+}
+
+.address-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.address-info text {
+  margin-left: 30rpx;
+  font-size: 32rpx;
+}
+
+.address-info button {
+  height: 40rpx;
+  font-size: 20rpx;
+  color: #3c6;
+  border: 0.5rpx solid #3c6;
+  padding: 0 10rpx;
+}
+
+.addres-detail {
+  font-size: 28rpx;
+  color: #666;
+  margin: 10rpx 30rpx;
+}
+
+.edit-btn {
+  width: 60rpx;
+  height: 60rpx;
+  flex-shrink: 0;
+}
+
+.add-item {
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+}
+
+.text-add {
+  font-size: 28rpx;
+  color: #6e6e6e;
+}
+
+.default-icon, .set-dafault-btn {
+  color: #34b36c;
+  border: 1px solid #34b36c;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  padding: 0 10rpx;
+}
+
+.btn-hover {
+  opacity: 0.7;
+}
+
+

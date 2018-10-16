@@ -1,0 +1,71 @@
+<!--pages/mall/index.wxml-->
+
+<view class='product-page'>
+
+  <view class='main'>
+    <scroll-view class='left-nav' scroll-y>
+      <radio-group class="nav-group" bindchange="navChange">
+        <label class="radio {{catesId == item.id ? 'actived' : ''}}" wx:for="{{cates}}" wx:key="navs">
+          <radio value="{{item.id}}" checked="{{catesId == item.id}}" /> {{item.name}}
+
+          <view hidden='{{item.number == 0}}'>
+            <view class='item-badge'>{{item.number}}</view>
+          </view>
+
+        </label>
+      </radio-group>
+    </scroll-view>
+
+    <scroll-view class='product-body' scroll-y>
+      <view class='product-list-title'>
+        {{catesName}}
+      </view>
+      <view class='product-list'>
+        <block wx:if="{{products.length}}">
+          <view class='product-item' wx:for="{{products}}" wx:key="list">
+
+            <image src="{{item.image}}" mode='aspectFill' data-content="{{item}}" bindtap='toDetail'></image>
+
+            <view class='product-content'>
+              <view class='product-title'>{{item.name}}</view>
+              <view class='product-price'>
+                <text>￥</text> {{item.price}}</view>
+
+              <view class='num-box'>
+                <view class='num-btn minus-btn' data-id="{{item.id}}" bindtap='minusCount' hidden='{{item.number==0}}'></view>
+                <view class='num' hidden='{{item.number==0}}'>{{item.number}}</view>
+                <view class='num-btn plus-btn' data-id="{{item.id}}" bindtap='addCount'></view>
+              </view>
+
+            </view>
+          </view>
+        </block>
+        <view class='empty-data' wx:else>
+          —— 暂无产品 ——
+        </view>
+      </view>
+
+    </scroll-view>
+  </view>
+
+  <view class='total-bar'>
+    <view class='sum-box'>
+      <view class='badge-box'>
+        <image class="sum-icon" src='../../images/mall/sum-icon.png' mode='widthFix'></image>
+        <view hidden='{{totalNumaber == 0}}'>
+          <view class='badge'>{{totalNumaber}}</view>
+        </view>
+      </view>
+      <view class='sum'>
+        <text>￥</text>{{totalPrice}}
+      </view>
+    </view>
+
+    <view class='right-btn'>
+      <view hidden='{{totalNumaber!= 0}}'>未选择商品</view>
+      <view class='choosed-btn flex-center' bindtap='toPay' hidden='{{totalNumaber== 0}}'>选好了</view>
+    </view>
+
+  </view>
+
+</view>

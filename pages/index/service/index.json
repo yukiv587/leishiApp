@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "服务项目",
+  "usingComponents": {
+    "building": "/components/building",
+    "service-group": "/components/service_group",
+    "navbar": "/components/navbar"
+  }
+}

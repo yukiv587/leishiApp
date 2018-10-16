@@ -1,0 +1,102 @@
+<!--pages/mall/pay.wxml-->
+
+
+<view class='pay-page'>
+
+  <view class='address-box'>
+    <view class='top flex-between'>
+      <view class='attr-name flex-center'>
+        <image class="red-point" src='../../images/mall/red-point.png' mode='widthFix'></image>
+        配送至：
+      </view>
+      <view class='username flex-center'>
+        <text>{{address.receiver}}</text>
+        <view class='change-address-btn' bindtap='changeAddress' wx:if='{{address.id}}'>更改地址</view>
+        <view class='change-address-btn' bindtap='addAddress' wx:else>添加地址</view>
+      </view>
+    </view>
+
+    <view class='bottom' wx:if='{{address.id}}'>
+      <view class='tel flex-between'>
+        <text>联系电话：</text>
+        <text>{{address.mobile}}</text>
+      </view>
+      <view class='address'>{{address.province + address.city + address.district + address.address}}</view>
+    </view>
+
+  </view>
+
+
+  <view class='column-item flex-between' bindtap='selectCoupon'>
+    <view class='attr-name flex-center'>
+      选择优惠
+    </view>
+    <view class='attr-content attr-arrow attr-discount flex-center'>
+      <block wx:if="{{selectedCoupon}}">
+        <image src='../../images/mall/discount-icon.png' mode='widthFix'></image>
+        {{selectedCoupon.name}}
+      </block>
+
+    </view>
+  </view>
+
+  <view class='column-item flex-between' hidden>
+    <view class='attr-name flex-center'>
+      选择快递
+    </view>
+    <view class='attr-content attr-arrow'>顺丰快递</view>
+  </view>
+
+  <view class='column-item flex-between'>
+    <view class='attr-name flex-center'>
+      支付方式
+    </view>
+    <view class='attr-content attr-wechat flex-center'>
+      <image src='../../images/mall/wechat-pay-icon.png' mode='widthFix'></image>
+      微信支付
+    </view>
+  </view>
+
+  <view class='order-list-box'>
+
+    <view class='flex-center arrow-btn-box' bindtap='orderToggle'>
+      <view class='arrow-btn'></view>
+    </view>
+
+    <scroll-view scroll-y class="order-list" hidden='{{!orderShow}}'>
+      <view class='order-item flex-between' wx:for="{{carts}}" wx:key="key">
+        <text class='goods-name'>{{item.name}}</text>
+        <text>x{{item.number}}</text>
+        <text class='goods-price'>￥{{item.price}}</text>
+      </view>
+      <view class='order-item order-discount flex-between' wx:if="{{selectedCoupon}}">
+        <text>优惠券</text>
+        <text><text>减</text>￥{{selectedCoupon.amount}}</text>
+      </view>
+      <view class='order-item flex-between'>
+        <text>邮费</text>
+        <text>￥{{postage}}</text>
+      </view>
+    </scroll-view>
+
+
+  </view>
+
+
+  <!-- 底部 -->
+  <view class='total-bar'>
+    <view class='sum-box'>
+      <view class='badge-box'>
+        <image class="sum-icon" src='../../images/mall/sum-icon.png' mode='widthFix'></image>
+        <view class='badge' hidden='{{totalNumaber == 0}}'>{{totalNumaber}}</view>
+      </view>
+      <view class='sum'>
+        <text>￥</text>{{totalAmount}}
+      </view>
+    </view>
+
+    <view class='right-btn' bindtap='weChatPayment'>付款</view>
+
+  </view>
+
+</view>

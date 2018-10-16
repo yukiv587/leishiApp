@@ -1,0 +1,142 @@
+/* pages/mine/info.wxss */
+
+.info-page {
+}
+
+.photo-box {
+  height: 250rpx;
+  background-color: #d3d3d3;
+  flex-direction: column;
+  margin-bottom: 20rpx;
+}
+
+.photo-box image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100%;
+}
+
+.upload-btn {
+  font-size: 26rpx;
+  border-radius: 50rpx;
+  color: #666;
+  border: 1px solid #666;
+  background-color: #f5f5f5;
+  width: 140rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  margin-top: 26rpx;
+}
+
+.upload-btn-hover {
+  opacity: 0.8;
+}
+
+.section-box {
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  padding: 0 26rpx;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f5f5f5;
+  height: 100rpx;
+  min-height: 100rpx;
+}
+
+.section-gap picker::after {
+  content: " ";
+  display: inline-block;
+  height: 16rpx;
+  width: 16rpx;
+  border-width: 1px 1px 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  margin-left: 22rpx;
+}
+
+.section-cal picker::after {
+  content: " ";
+  display: inline-block;
+  height: 44rpx;
+  width: 44rpx;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAA9CAMAAAApvJHbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjY4QTc1OUEyQzAxMTFFODhFMzlDQUIwNjE4NjNFQzkiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjY4QTc1OUIyQzAxMTFFODhFMzlDQUIwNjE4NjNFQzkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NjhBNzU5ODJDMDExMUU4OEUzOUNBQjA2MTg2M0VDOSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2NjhBNzU5OTJDMDExMUU4OEUzOUNBQjA2MTg2M0VDOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PraongUAAACQUExURczMzOTk5M7Ozunp6erq6t7e3v///+jo6P39/eHh4fLy8v7+/s3NzdLS0vz8/ODg4NfX1+vr69jY2NHR0fX19fb29vT09PDw8O/v7+fn5+3t7e7u7tTU1M/Pz/Hx8ezs7Pj4+OLi4tvb2/v7+/r6+tbW1vPz89DQ0NnZ2dzc3OPj4/f399XV1fn5+d/f3////2Ux6gwAAAAwdFJOU///////////////////////////////////////////////////////////////AGKl0HgAAAH4SURBVHja7JfZlqMgEIYJMmqL2pK4xSVm7719/7drCwjROZBunDMXfU7+q/yWH0SoKhH1I9GMVMferGNFMjq+gEa/XYZR2ORGOG9ChJlroLcRGvRMDTB9hnC0NdA54uGzgT7zwVFuoFMeXQUGOljxePo3TX2uQNClr1cp6EA4Kmn3zXsA7V54FO9fH3R63WMef9lx6725QNNOXLUV7uhA12iu6h4dmtl0c0ABmq8AsXA2HDK0+Ie5F3f6V9Lh6Y+tTqGi27q3Vd0qGjvWtIPvNKfpxhMqfbB+6QhbUGFldEO1dNpeqt4DW13aBub7ub7YNtXSTOVQAsM/KvsIf+ykLNPRrnOl48GO6KFzx0tlHVdHExVf3qSJaz93cnvub547uf3cfRZN1rx8kvapBOtd1jzK9NmSM4er8MUbVzhHvJH9QjiW36tkQh82AWgjTybbgttCHpJSGT3o6W2yikCrhvAlf5f2nS86aaRNjt9UyRK2bKfsDjbsmqnVT6rkU9nPaaZ6/6FKfkrrK9S70poqGc2tXbXz5PaeTG+/Dpbru2Kx5m1vzT7AxpW0VQz2g0lbUEOuURekTti37L3GECbWNBF0N3S7cE9stQesRin0yhDbilMpGhWPrZIY9Vk7E24z+KrJkjlH9DDJxBdVnHYLW3UpZP+XAAMAtXILCUuogu4AAAAASUVORK5CYII=");
+  background-size: cover;
+  margin-left: 24rpx;
+}
+
+.section-box .section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  font-size: 28rpx;
+  min-width: 220rpx;
+}
+
+.section-title text {
+  color: #d3d3d3;
+}
+
+.section input, .section picker {
+  font-size: 28rpx;
+  min-width: 100rpx;
+  text-align: right;
+}
+
+.identity-picker {
+  color: #999;
+}
+
+.btn-area {
+  padding: 30rpx 70rpx 50rpx;
+}
+
+.btn-area button {
+  background-color: #42be73;
+  border-color: #42be73;
+  color: #fff;
+  font-size: 28rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.button-hover {
+  opacity: 0.7;
+}
+
+picker {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sex-group  label {
+  width: 120rpx;
+  font-size: 28rpx;
+}
+
+.sex-group radio {
+  display: none;
+}
+
+.sex-status {
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 100%;
+  background-color: #f0f0f0;
+  border: 6rpx solid #f0f0f0;
+  margin-right: 20rpx;
+}
+
+.sex-checked {
+  background-color: #35b36c;
+}

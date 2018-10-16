@@ -1,0 +1,151 @@
+<!--index.wxml-->
+<view class="index-page" scroll-y='false'>
+
+  <radio-group class="navbar radio-group" bindchange="navChange">
+    <label class="radio {{navIndex == index ? 'cur' : ''}}" wx:for="{{navs}}" wx:key="navs">
+      <radio value="{{index}}" checked="{{index==navIndex}}" />{{item}}
+    </label>
+  </radio-group>
+
+
+  <view class='tab tab-baby'>
+
+    <!-- 视频 -->
+    <view class='video-body'>
+      <image class="video-bg" src='../../images/index-video-bg.png' mode='widthFix'></image>
+      <view class='video-box'>
+        <video wx:if="{{showVideo}}" id="myVideo" src="{{videoSrc}}" loop autoplay objectFit="fill" controls></video>
+        <view class='video-masker flex-center' wx:else bindtap='playVideo'>
+          <image class="video-bg" src='../../images/index/play-icon.png' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 服务项目 -->
+    <view class='column-body service-body' hidden='{{navIndex !=0}}'>
+      <view class='column-title service-title'>服务项目</view>
+      <view class='service-box'>
+        <view class='service-item' wx:for="{{services}}" wx:key="services" data-scid="{{index}}" bindtap="toService">
+          <image src='../../images/index/{{item.icon}}' mode='widthFix'></image>
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 关于我们 -->
+    <view class='column-body about-body' hidden='{{navIndex ==0}}'>
+      <navigator url="/pages/index/about/about">
+        <image src='../../images/index/about-icon.png' mode='widthFix'></image>
+      </navigator>
+      <navigator url="/pages/index/about/contact">
+        <image src='../../images/index/contact-icon.png' mode='widthFix'></image>
+      </navigator>
+    </view>
+
+    <!-- 热门服务 -->
+
+    <view class='column-body hot-service-body' hidden='{{navIndex !=0}}' wx:if="{{hot_services.length}}">
+      <view class='column-title hot-service-title'>
+        <view class='title-icon'></view>
+        热门服务
+      </view>
+      <view class='column-main'>
+        <service-group list='{{hot_services}}' mediaPrefix="{{mediaPrefix}}"></service-group>
+        <button class="read-more" size="mini" plain data-link="index/service/index" bindtap="linkTo"> 查看全部服务 </button>
+      </view>
+    </view>
+
+    <!-- 热门产品 -->
+    <view class='column-body hot-product-body' hidden='{{navIndex !=0}}' wx:if="{{hot_products.length}}">
+      <view class='column-title hot-product-title'>
+        <view class='title-icon'></view>
+        热门产品
+      </view>
+      <view class='column-main'>
+        <view class='column-item hot-product-item' wx:for="{{hot_products}}" wx:key="hot" data-link="index/product/detail" data-content="{{item}}" bindtap="toProductDetail">
+          <image src='{{mediaPrefix+item.image}}' mode='aspectFit'></image>
+          <view class='title'>{{item.name}}</view>
+          <view class='desc'>{{item.description}}</view>
+        </view>
+        <button class="read-more" size="mini" plain data-link="index/product/index" bindtap="linkTo"> 查看全部产品 </button>
+      </view>
+    </view>
+
+    <!-- 品质 -->
+    <view class='column-body quality-body' hidden='{{navIndex !=0}}'>
+      <view class='column-main'>
+        <view class='column-item quality-item' wx:for="{{quality}}" wx:key="quality">
+          <image src='../../images/index/{{item.icon}}' mode='widthFix'></image>
+          <view class='title'>{{item.title}}</view>
+          <view class='desc'>{{item.desc}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 门店加盟 -->
+    <view class='column-body shop-join-body' hidden='{{navIndex !=1}}' wx:if="{{join.length}}">
+      <view class='column-title shop-join-title'>
+        <view class='title-icon'></view>
+        门店加盟
+      </view>
+      <view class='column-main'>
+        <navigator url="/pages/index/join/index?navIndex={{index}}" wx:for="{{join}}" wx:key="join">
+          <image src='{{mediaPrefix + item.thumbnail}}' mode='widthFix'></image>
+        </navigator>
+      </view>
+    </view>
+
+    <!-- 我要找项目 -->
+    <view class='column-body project-body' hidden='{{navIndex !=1}}' wx:if="{{project.articles.length}}">
+      <view class='column-title project-title'>
+        <view class='title-icon'></view>
+        我要找项目
+      </view>
+      <view class='column-main'>
+        <view class='column-item project-item' wx:for="{{project.articles}}" wx:key="project" data-content="{{item.content}}" bindtap='toProjectDetail'>
+          <image src='{{mediaPrefix + item.thumbnail}}' mode='widthFix'></image>
+          <view class='title'>{{item.title}}</view>
+        </view>
+        <button class="read-more" size="mini" plain data-link="index/project/index" bindtap="linkTo"> 查看全部项目 </button>
+      </view>
+    </view>
+
+    <!-- 本部招聘中 -->
+    <view class='column-body job-body' hidden='{{navIndex !=2}}'>
+      <view class='column-title'>
+        <view class='title-icon'></view>
+        {{job.name}}
+      </view>
+      <view class='column-main'>
+        <image src='{{mediaPrefix + job.thumbnail}}' mode='widthFix' data-content="{{job.content}}" bindtap='toJob'></image>
+        <button class="read-more" size="mini" plain data-content="{{job.content}}" bindtap='toJob'> 查看招聘职位 </button>
+      </view>
+    </view>
+
+    <!-- 我要学习技能 -->
+    <view class='column-body skill-body' hidden='{{navIndex ==0}}' wx:if="{{skill.length}}">
+      <view class='column-title'>
+        <view class='title-icon'></view>
+        我要学习技能
+      </view>
+      <view class='column-main'>
+        <view class='column-item skill-item' wx:for="{{skill}}" wx:key="skill" data-datail="{{skill}}" bindtap='toTrain' data-index='{{index}}'>
+          <image src='{{mediaPrefix + item.articles[0].thumbnail}}' mode='aspectFit'></image>
+          <view class='content'>
+            <view class='title'>{{item.articles[0].title}}</view>
+            <view class='desc'>{{item.articles[0].description}}</view>
+          </view>
+        </view>
+        <button class="read-more" size="mini" plain data-datail="{{skill}}" bindtap='toTrain'> 查看更多内容 </button>
+      </view>
+    </view>
+
+  </view>
+
+
+  <view class='coupon-box' bindtap='hideCoupon'>
+    <coupon id="coupon" content="{{couponContent}}"></coupon>
+  </view>
+
+
+</view>

@@ -1,0 +1,72 @@
+/* pages/index/join/index.wxss */
+
+.join-page {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.tab {
+  padding-top: 84rpx;
+}
+
+.shop-list {
+  padding: 20rpx 16rpx 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.shop-list::after {
+  content: "";
+  position: absolute;
+  left: 16rpx;
+  right: 16rpx;
+  bottom: 0;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.shop-list navigator {
+  width: 352rpx;
+  height: 240rpx;
+  margin-bottom: 20rpx;
+}
+
+.shop-list image {
+  width: 352rpx;
+  height: 240rpx;
+}
+
+.btn-area {
+  padding: 28rpx;
+}
+
+.tel-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #34b36c;
+  height: 96rpx;
+  border-radius: 12rpx;
+}
+
+.tel-btn image {
+  width: 34rpx;
+  margin-right: 16rpx;
+}
+
+.tel-hover {
+  background-color: rgba(52, 179, 108, 0.8);
+}

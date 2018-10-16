@@ -1,0 +1,38 @@
+/* components/navbar.wxss */
+
+.navbar {
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+  height: 84rpx;
+}
+
+.navbar label {
+  display: block;
+  height: 84rpx;
+  text-align: center;
+  flex: 1;
+  font-size: 32rpx;
+  position: relative;
+  line-height: 84rpx;
+  color: #000;
+}
+
+.navbar label::after {
+  content: "";
+  display: inline-block;
+  height: 6rpx;
+  background-color: transparent;
+  position: absolute;
+  left: 70rpx;
+  right: 70rpx;
+  bottom: 8rpx;
+}
+
+.navbar .cur::after {
+  background-color: #34b36c;
+}
+
+.navbar radio {
+  display: none;
+}

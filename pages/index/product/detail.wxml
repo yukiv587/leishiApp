@@ -1,0 +1,33 @@
+<!--pages/product/detail.wxml-->
+
+<view class='main-content'>
+  <view class='rich-content' wx:if='{{content}}'>
+    <rich-text nodes="{{content}}"></rich-text>
+    <view class='mask'></view>
+  </view>
+
+  <!-- 页面施工中 -->
+  <building wx:else></building>
+</view>
+
+<view class='total-bar'>
+  <view class='sum-box'>
+    <view class='badge-box'>
+      <image class="sum-icon" src='../../../images/mall/sum-icon.png' mode='widthFix'></image>
+    </view>
+    <view class='sum'>
+      <text>￥</text>{{totalPrice}}
+    </view>
+  </view>
+
+  <view class='num-box'>
+    <view class='num-btn minus-btn' bindtap='minusCount'></view>
+    <view class='num'>{{productNumber}}</view>
+    <view class='num-btn plus-btn' bindtap='addCount'></view>
+  </view>
+
+  <view class='right-btn'>
+    <button class='buy-btn flex-center' size="mini" bindtap="toPay" hover-class="button-hover"> 购买 </button>
+  </view>
+
+</view>

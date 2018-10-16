@@ -1,0 +1,22 @@
+/* pages/index/service/index.wxss */
+
+.nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.list {
+  padding-top: 104rpx;
+}
+
+.list-inner {
+  background-color: #fff;
+  padding: 20rpx 40rpx;
+}
+
+.yuesao {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,34 @@
+<!--pages/mine/address-edit.wxml-->
+<form bindsubmit="formChecked">
+  <view class='form'>
+    <view class='item'>
+      <text class='item-title'>收货人</text>
+      <input type='text' name="receiver" value="{{address.receiver}}" placeholder='姓名'></input>
+    </view>
+
+    <view class='item'>
+      <text class='item-title'>联系方式</text>
+      <input name="mobile" type='number' value="{{address.mobile}}" placeholder='手机号'></input>
+    </view>
+
+    <view class='item'>
+      <text class='item-title'>所在地区</text>
+      <picker class="address-select" name="region" mode="region" bindchange="bindRegionChange" value="{{region}}">
+        <view class="picker {{region[1] ? '' : 'color-gray2'}}">
+          {{region[0]}} {{region[1]}} {{region[2]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class='item'>
+      <text class='item-title'>详细地址</text>
+      <textarea name="address" placeholder='需填写楼栋层或房间号信息' value='{{address.address}}' />
+    </view>
+
+    <view class='btn-area'>
+      <button formType="submit" class='confirm-btn' hover-class='btn-hover'> 确认 </button>
+      <button class='delete-btn' hover-class='btn-hover' data-id="{{address.id}}" bindtap='deleteAddress'> 删除当前地址 </button>
+    </view>
+
+  </view>
+</form>

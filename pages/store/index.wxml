@@ -1,0 +1,61 @@
+<!--pages/store/index.wxml-->
+
+<view class='store-page'>
+
+  <view class='place'>
+    <view class='city' bindtap='getLocationAuth'>
+      <image src='../../images/store/map-icon1.png' mode='widthFix'></image>
+      {{currCity}}
+    </view>
+    <view class='sort' bindtap='toggleSort' hidden>排序</view>
+
+  </view>
+
+  <view class='sort-group-box' hidden='{{!showSort}}'>
+    <view class='mark' bindtap='toggleSort'></view>
+    <radio-group class="sort-group" bindchange="sortChange">
+      <label class="radio">
+        <radio value="asc" checked />按最短距离排序
+      </label>
+      <label class="radio">
+        <radio value="desc" />按最远距离排序
+      </label>
+    </radio-group>
+  </view>
+
+
+  <scroll-view scroll-y class='store-list'>
+
+    <view class='store-item' wx:for="{{stores}}" wx:key='store'>
+
+      <view class='top'>
+
+        <view class='info'>
+          <image src='../../images/store/logo.png' mode='widthFix'></image>
+          <view class='title-box'>
+            <view class='title'>{{item.name}}</view>
+            <view class='distance'>
+              <image src='../../images/store/map-icon2.png' mode='widthFix'></image>
+              距离：{{item.distance}}m
+            </view>
+
+          </view>
+        </view>
+
+        <view class='read-more' hover-class="read-more-hover" data-id="{{item.id}}" bindtap='readMore'>查看</view>
+
+      </view>
+
+      <view class='store-img-box'>
+        <image class="store-img" src='{{item.image}}' lazy-load mode='aspectFill'></image>
+
+        <image class="call-icon" src='../../images/store/call-icon.png' mode='widthFix' data-tel="{{item.tel}}" bindtap='makePhoneCall'></image>
+
+      </view>
+
+    </view>
+
+  </scroll-view>
+
+
+</view>

@@ -1,0 +1,48 @@
+<view class='header'>
+  <image class='header-bg' src='../../images/mine-bg.png' mode='widthFix'></image>
+  <view class='profile'>
+    <image class='head' src='{{userInfo.avatarurl}}' mode='aspectFill'></image>
+    <view class='username'>{{userInfo.realname}}</view>
+  </view>
+</view>
+
+<view class='menu'>
+
+  <view class='menu-item' data-link="info" bindtap='linkTo'>
+    <image class='menu-icon' src='../../images/mine-icon1.png' mode='widthFix'></image>
+    <view class='menu-item-tap'>
+      <view class='menu-item-tap-text'>我的信息</view>
+      <view class='meun-item-tap-tip'>完善资料</view>
+    </view>
+  </view>
+
+  <view class='menu-item-line'></view>
+
+  <view class='menu-item' data-link="order" bindtap='linkTo'>
+    <image class='menu-icon' src='../../images/mine-icon2.png' mode='widthFix'></image>
+    <view class='menu-item-tap'>
+      <view class='menu-item-tap-text'>我的订单</view>
+    </view>
+  </view>
+
+  <view class='menu-item-line'></view>
+
+  <view class='menu-item' data-link="coupon" bindtap='linkTo'>
+    <image class='menu-icon' src='../../images/mine-icon3.png' mode='widthFix'></image>
+    <view class='menu-item-tap'>
+      <view class='menu-item-tap-text'>我的优惠</view>
+      <view class='meun-item-tap-tip'>完善资料有好礼</view>
+    </view>
+  </view>
+
+  <view class='menu-item-line'></view>
+
+  <view class='menu-item' data-link="address" bindtap='linkTo'>
+    <image class='menu-icon' src='../../images/mine-icon6.png' mode='widthFix'></image>
+    <view class='menu-item-tap'>
+      <view class='menu-item-tap-text'>地址管理</view>
+    </view>
+  </view>
+</view>
+
+<button class="contact-btn" size="default" hover-class='contact-btn-hover' open-type="contact"> 联系客服 </button>

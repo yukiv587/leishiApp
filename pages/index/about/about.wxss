@@ -1,0 +1,47 @@
+/* pages/index/about.wxss */
+
+page {
+  background-color: #f7f7f7;
+}
+
+.banner {
+  width: 100%;
+}
+
+.top {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.about-content {
+  display: block;
+  font-size: 30rpx;
+  padding: 0 30rpx 30rpx;
+  text-indent: 2em;
+  margin-top: -20rpx;
+}
+
+.photo {
+  background-color: #fff;
+}
+
+.photo .title {
+  text-align: center;
+  font-size: 32rpx;
+  padding: 30rpx 0;
+  color: #4d4d4d;
+}
+
+.photo-box {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 40rpx;
+}
+
+.photo image {
+  width: 320rpx;
+  height: 230rpx;
+  margin-bottom: 30rpx;
+  border-radius: 8rpx;
+}

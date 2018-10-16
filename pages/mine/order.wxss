@@ -1,0 +1,87 @@
+.navbar-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ededed;
+}
+
+.order-list {
+  padding-top: 104rpx;
+  color: #5e5e5e;
+}
+
+.order-item {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  padding: 20rpx 30rpx;
+  font-size: 28rpx;
+}
+
+.order-list .top {
+  height: 80rpx;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.order-list .list {
+  padding: 10rpx 0;
+  border-bottom: 1px solid #ebebeb;
+  box-shadow: 0px 1px 0px #ebebeb;
+}
+
+.discount-item text text {
+  color: #e97979;
+}
+
+.list-item {
+  padding: 10rpx 0;
+}
+
+.attr-name {
+  width: 360rpx;
+}
+
+.attr-name .num {
+  padding-left: 20rpx;
+}
+
+.total {
+  padding: 10rpx 0;
+  border-bottom: 1px solid #ededed;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.total text {
+  padding: 8rpx 0;
+}
+
+.express-number {
+  color: #497ec6;
+}
+
+.btn-area {
+  padding-top: 20rpx;
+  text-align: right;
+}
+
+.btn-area button {
+  color: #a7a7a7;
+  border-color: #a7a7a7;
+  border-radius: 50rpx;
+  margin-left: 30rpx;
+  font-size: 28rpx;
+  border: 1px solid #a7a7a7;
+}
+
+.btn-area button::after {
+  border: none;
+}
+
+.btn-area .confirm-btn {
+  color: #ffa859;
+  border-color: #ffa859;
+}

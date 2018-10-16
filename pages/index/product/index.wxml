@@ -1,0 +1,37 @@
+<!--pages/product/index.wxml-->
+<!-- 产品 -->
+
+<view class='product-page'>
+
+  <scroll-view class='left-nav' scroll-y>
+    <radio-group class="nav-group" bindchange="navChange">
+      <label class="radio {{catesId == 0 ? 'actived' : ''}}">
+        <radio value="0" checked="{{catesId == 0}}" />新品推荐
+      </label>
+      <label class="radio {{catesId == item.id ? 'actived' : ''}}" wx:for="{{cates}}" wx:key="cates">
+        <radio value="{{item.id}}" checked="{{catesId == item.id}}" />{{item.name}}
+      </label>
+    </radio-group>
+  </scroll-view>
+
+  <scroll-view class='product-body' scroll-y>
+    <view class='product-list-title'>
+      {{catesName}}
+    </view>
+    <view class='product-list'>
+
+      <block wx:if="{{products.length}}">
+        <view class='product-item' wx:for="{{products}}" wx:key="list" data-content="{{item}}" bindtap='toDetail'>
+          <image src="{{mediaPrefix + item.image}}" mode='aspectFill'></image>
+          <view class='product-title'>{{item.name}}</view>
+        </view>
+      </block>
+      <view class='empty-data' wx:else>
+        —— 暂无产品 ——
+      </view>
+
+    </view>
+
+  </scroll-view>
+
+</view>

@@ -1,0 +1,5 @@
+<!--components/building.wxml-->
+
+<view class="building">
+  <image src='../images/building.png' mode='widthFix'></image>
+</view>

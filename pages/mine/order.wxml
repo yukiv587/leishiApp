@@ -1,0 +1,54 @@
+<!--pages/mine/order.wxml-->
+
+<view class='order-page'>
+  <view class='navbar-box'>
+    <navbar list="{{navs}}" navIndex='{{navIndex}}' bind:navChange="navChange"></navbar>
+  </view>
+
+  <view class='order-list'>
+    <block wx:if='{{ordersList.length}}'>
+      <view class='order-item' wx:for="{{ordersList}}" wx:key="navs">
+
+        <view class='top flex-between'>
+          <view class='num'>订单号：{{item.tradeno}}</view>
+          <view class='status'>状态：{{navs[item.state]}}</view>
+        </view>
+
+        <view class='list'>
+          <view class='list-item flex-between' wx:for="{{item.products}}" wx:key="list" wx:for-item="product">
+            <view class='attr-name flex-between'>
+              <text>{{product.name}}</text>
+              <text class='num'>x{{product.count}}</text>
+            </view>
+            <text>￥{{product.price}}</text>
+          </view>
+
+          <view class='list-item discount-item flex-between'>
+            <text>优惠券</text>
+            <text><text>减</text>￥{{item.coupon}}</text>
+          </view>
+        </view>
+
+        <view class='total'>
+          <text> 共{{item.total_count}}件商品 合计：￥{{item.amount}}（包含运费￥{{item.deliveryamount}}）</text>
+          <text wx:if="{{item.express}}">{{item.express}} 单号：<text class='express-number'>{{item.trackingno}}</text> </text>
+        </view>
+
+        <view class='btn-area'>
+          <button size='mini' wx:if="{{item.state!=0}}"  data-express="{{item.express}}" data-postid="{{item.trackingno}}" bindtap='viewLogistics'>查看物流</button>
+          <!-- <button size='mini' plain>删除订单</button>
+        <button size='mini' plain>撤销订单</button> -->
+          <button class="confirm-btn" size='mini' plain plain data-id="{{item.id}}" bindtap='confirmOrder' wx:if="{{item.state==1}}">确认收货</button>
+        </view>
+
+      </view>
+    </block>
+
+    <view class='empty-data' wx:else>
+      —— 暂无订单 ——
+    </view>
+
+  </view>
+
+
+</view>

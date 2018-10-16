@@ -1,0 +1,6 @@
+/* pages/index/join/shop.wxss */
+
+.shop-page {
+  width: 100vw;
+  overflow: hidden;
+}

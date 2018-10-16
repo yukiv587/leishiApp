@@ -1,0 +1,10 @@
+<!--pages/index/project/index.wxml-->
+<!-- 我要找项目 -->
+<view class='project-body'>
+  <view class='column-main'>
+    <view class='column-item project-item' wx:for="{{projects}}" wx:key="project" data-content="{{item.content}}" bindtap='toProjectDetail'>
+      <image src='{{mediaPrefix + item.thumbnail}}' mode='widthFix'></image>
+      <view class='title'>{{item.title}}</view>
+    </view>
+  </view>
+</view>

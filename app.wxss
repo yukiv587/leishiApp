@@ -1,0 +1,126 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+
+page {
+  color: #4d4d4d;
+  background-color: #f7f7f7;
+  font-family: '微软雅黑';
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 商城底部  STATRT*/
+
+.total-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  height: 110rpx;
+  background-color: #42be73;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 0 20rpx;
+  font-size: 38rpx;
+}
+
+.total-bar .sum-box {
+  display: flex;
+  align-items: center;
+}
+
+.total-bar .sum-icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.total-bar .sum text {
+  font-size: 28rpx;
+}
+
+.total-bar .badge-box {
+  display: flex;
+  width: 120rpx;
+}
+
+.total-bar .badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rpx;
+  height: 30rpx;
+  font-size: 22rpx;
+  color: #fff;
+  background-color: #279b71;
+  border-radius: 100%;
+  margin-left: 20rpx;
+}
+
+.total-bar .right-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 244rpx;
+  height: 100%;
+  border-left: 1px solid #fff;
+}
+
+.total-bar .choosed-btn::after {
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 1px 1px 0 0;
+  border-color: #fff;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: relative;
+  left: 14rpx;
+}
+
+/* 商城底部  END*/
+
+.empty-data {
+  width: 100%;
+  padding: 30rpx 0;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.rich-content {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.rich-content .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+}

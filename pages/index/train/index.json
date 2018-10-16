@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "培训",
+  "usingComponents": {
+    "building": "/components/building",
+    "navbar": "/components/navbar"
+  }
+}

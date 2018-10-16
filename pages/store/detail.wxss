@@ -1,0 +1,212 @@
+/* pages/store/detail.wxss */
+
+page {
+  color: #4d4d4d;
+}
+
+.banner {
+  width: 100%;
+  height: 270rpx;
+}
+
+.banner image {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  padding: 0 20rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 90rpx;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.title-box .title {
+  font-size: 32rpx;
+}
+
+.title-box .goto {
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.title-box .goto image {
+  width: 40rpx;
+  height: auto;
+  margin-right: 8rpx;
+}
+
+.title-box .goto::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 44rpx;
+  background-color: #e0e0e0;
+  margin-right: 20rpx;
+}
+
+.info .desc {
+  display: flex;
+  flex-direction: column;
+  font-size: 28rpx;
+  height: 120rpx;
+  justify-content: space-around;
+  padding: 20rpx 0;
+}
+
+.business {
+  background-color: #fff;
+}
+
+.nav-box {
+  height: 90rpx;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.nav-title {
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+}
+
+.nav-title image {
+  width: 32rpx;
+  height: auto;
+  margin-right: 10rpx;
+}
+
+.nav-group-box {
+  width: 70%;
+}
+
+.nav-group {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.nav-group label {
+  font-size: 32rpx;
+  color: #999;
+  text-align: center;
+  white-space: nowrap;
+  flex: 1;
+  padding: 0 10rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+
+.nav-group .actived {
+  color: #30af70;
+}
+
+.nav-group radio {
+  display: none;
+}
+
+.reservation {
+  box-sizing: border-box;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ededed;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.tel-box {
+  font-size: 35rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40rpx;
+}
+
+.tel-box image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+.call-btn {
+  width: 248rpx;
+  height: 100%;
+  background-color: #30af70;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+}
+
+.service-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 100rpx;
+}
+
+.hot-service-item {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border: 1px solid #ededed;
+  border-top: none;
+}
+
+.hot-service-item:nth-child(n) {
+  border-left: none;
+}
+
+.hot-service-item:nth-child(2n) {
+  border-right: none;
+}
+
+.hot-service-item image {
+  width: 100%;
+  height: 244rpx;
+}
+
+.hot-service-item .title {
+  font-size: 32rpx;
+  color: #ffac38;
+  padding: 10rpx 0 5rpx;
+}
+
+.hot-service-item .desc {
+  font-size: 28rpx;
+  padding: 5rpx 0;
+  color: #999;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  height: 84rpx;
+}
+
+.hot-service-item .price {
+  font-size: 26rpx;
+  padding: 5rpx 0;
+  color: #999;
+}
+
+.hot-service-item .price text {
+  font-size: 32rpx;
+  color: #ffac38;
+}

@@ -1,0 +1,81 @@
+<!--pages/index/contact.wxml-->
+<view class='contact'>
+  <view class='title'>联系方式</view>
+
+  <view class='item'>
+    <view class='color-gray1'>咨询电话：</view>
+    <text class='color-gray2'>400-6866-399</text>
+  </view>
+
+  <view class='item'>
+    <view class='color-gray1'>咨询网站：</view>
+    <text class='color-gray2'>www.leishi.cc</text>
+  </view>
+
+  <view class='item'>
+    <view class='color-gray1'>电子邮件：</view>
+    <text class='color-gray2'>leishichina@outlook.com</text>
+  </view>
+
+  <view class='item'>
+    <view class='color-gray1'>
+      <image class='item-icon' src='../../../images/qq-icon.png' mode='widthFix'></image>
+      QQ：
+    </view>
+    <text class='color-gray2'>133800966；36105899</text>
+  </view>
+
+  <view class='item'>
+    <view class='color-gray1'>
+      <image class='item-icon' src='../../../images/webo-icon.png' mode='widthFix'></image>
+      微博：
+    </view>
+    <text class='color-gray2'>雷氏普爱</text>
+  </view>
+
+</view>
+<!-- <map id="map" longitude="113.324520" latitude="23.099994" scale="15" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location></map> -->
+
+<!-- <view class='msg-form'>
+  <view class='title'>留言</view>
+  <view class='item'>
+    <text class='color-gray1'>姓   名：</text>
+    <input type='text'></input>
+  </view>
+  <view class='item'>
+    <text class='color-gray1'>您的邮箱：</text>
+    <input type='text'></input>
+  </view>
+  <view class='item'>
+    <text class='color-gray1'>联系电话：</text>
+    <input type='number'></input>
+  </view>
+  <view class='txcontainter'>
+    <textarea placeholder="请输入您的留言"></textarea>
+  </view> 
+  <button type="primary" size="default"> 点击发送 </button>
+
+</view> -->
+
+
+<view class='address-list'>
+
+  <view class='info' wx:for='{{companies}}'>
+    <view class='title-box'>
+      <view class='title'>
+        <image src='../../../images/map-icon.png' mode='widthFix'></image>
+        {{item.name}}
+      </view>
+      <view class='goto' data-lat="{{item.lat}}" data-lng="{{item.lng}}" bindtap='showMap'>
+        <image src='../../../images/store/goto.png' mode='widthFix'></image>
+        去这里</view>
+    </view>
+
+    <view class='desc'>
+      <text>{{item.address}}</text>
+    </view>
+  </view>
+
+</view>
+
+<button type="primary" size="default" open-type="contact"> 联系客服 </button>

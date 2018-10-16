@@ -1,0 +1,8 @@
+<!--pages/index/join/shop.wxml-->
+
+<view class='shop-page'>
+  <view class='rich-content'>
+    <rich-text nodes="{{content}}"></rich-text>
+    <view class='mask'></view>
+  </view>
+</view>

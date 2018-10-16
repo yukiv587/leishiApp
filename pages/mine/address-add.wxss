@@ -1,0 +1,80 @@
+/* pages/mine/address-add.wxss */
+
+page {
+  background-color: #f7f7f7;
+}
+
+.color-gray2 {
+  color: #d1d1d1;
+}
+
+.item {
+  border-bottom: 1rpx solid #e4e4e4;
+  font-size: 32rpx;
+  padding: 20rpx 30rpx;
+  display: flex;
+}
+
+.item-title {
+  color: #999;
+  width: 22%;
+  flex-shrink: 0;
+}
+
+.form {
+  margin-top: 15rpx;
+  width: 100%;
+  background: white;
+}
+
+button {
+  font-size: 32rpx;
+  margin: 30rpx 20rpx;
+  height: 80rpx;
+}
+
+.address-select {
+  margin-left: 20rpx;
+  color: #666;
+  position: relative;
+  width: 480rpx;
+}
+
+.address-select::after {
+  content: " ";
+  display: inline-block;
+  height: 16rpx;
+  width: 16rpx;
+  border-width: 1px 1px 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  right: -30rpx;
+  margin-top: -4px;
+  margin-right: -4px;
+}
+
+.confirm-btn {
+  background-color: #34b36c;
+  color: #fff;
+}
+
+.btn-hover {
+  opacity: 0.8;
+}
+
+.input-placeholder, .textarea-placeholder {
+  color: #d1d1d1;
+}
+
+textarea {
+  height: 100rpx;
+}
+
+input, textarea ,picker{
+  width: 100%;
+  margin: 0 20rpx;
+}

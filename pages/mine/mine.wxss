@@ -1,0 +1,102 @@
+/* pages/mine/mine.wxss */
+
+page {
+  background-color: #f7f7f7;
+}
+
+.header {
+  position: relative;
+}
+
+.header-bg {
+  width: 100%;
+}
+
+.profile {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* 50%为自身尺寸的一半 */
+  text-align: center;
+}
+
+.head {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60px;
+}
+
+.username {
+  font-size: 36rpx;
+  color: white;
+}
+
+.menu {
+  background: white;
+  overflow: hidden;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.menu-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 30rpx;
+}
+
+.menu-item-tap {
+  width: 100%;
+  position: relative;
+}
+
+.menu-item-tap-text {
+  float: left;
+  font-size: 36rpx;
+}
+
+.meun-item-tap-tip {
+  float: right;
+  text-align: right;
+  font-size: 32rpx;
+  color: #ccc;
+  margin-right: 60rpx;
+}
+
+.menu-item-line {
+  width: 100%;
+  height: 1px;
+  margin-left: 110rpx;
+  background-color: #f7f7f7;
+}
+
+.menu-item-tap::after {
+  content: " ";
+  display: inline-block;
+  height: 16rpx;
+  width: 16rpx;
+  border-width: 1px 1px 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  right: 40rpx;
+  margin-top: -4px;
+  margin-right: -4px;
+}
+
+.contact-btn {
+  font-size: 32rpx;
+  margin: 30rpx 20rpx;
+  height: 80rpx;
+  background-color: #34b36c;
+  color: #fff;
+}
+
+.contact-btn-hover {
+  opacity: 0.8;
+}

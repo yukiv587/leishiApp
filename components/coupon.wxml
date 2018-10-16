@@ -1,0 +1,16 @@
+<!--components/coupon.wxml-->
+
+<view class='coupon-modal' hidden='{{!isShow}}'>
+  <view class='masker'></view>
+  <view class='close-btn'>
+    <image src='../images/close-icon.png' mode='widthFix'></image>
+  </view>
+  <view class='modal-content'>
+    <view class='image-box'>
+      <image src='../images/coupon-modal.png' mode='widthFix'></image>
+      <view class='text'>{{content}}</view>
+    </view>
+
+  </view>
+
+</view>

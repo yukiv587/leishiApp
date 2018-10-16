@@ -1,0 +1,21 @@
+<!--pages/index/about.wxml-->
+
+<view class='about-page'>
+  <view class='top'>
+    <image class="banner" src='../../../images/index/about-banner.png' mode='widthFix'></image>
+
+    <view class='about-content'>
+      <text>
+     雷氏普爱，雄踞产后行业20年，是中国产后恢复行业一站式创业支持平台。 历经20年的发展，目前雷氏普爱已成为一家集产后恢复、女性养生会所连锁门店加盟、生物食品、技能培训、日用洗护品及女性养生产品研发生产等为一体的集团化企业。\n雷氏普爱奉行“健康、贴心”的宗旨，在关系到人类健康和生殖繁衍的产后护理和女性保健领域，通过自主研发的产品和旗下门店加盟，为产后新妈妈解决产后护理问题，为广大女性提供最全面的养生保健服务，为所有女性带来由内而外的健康美丽。 传承中医经典古法，臻获专利配方。\n雷氏普爱荟萃59位中西医名家，针对产后恢复、母乳喂养、女性养生等问题共同研究论证，发掘传统中医药调理之精华，精心配伍组方，结合现代工艺，先后推出雷氏产后植物泡煮系列、雷氏植物沐粉系列、花拾间古方沐足系列、花拾间天然草本护肤调理系列等18大系列、360余种产品，并荣获多项发明专利。
+    </text>
+    </view>
+  </view>
+
+  <view class='photo'>
+    <view class='title'>照片展示</view>
+    <view class='photo-box'>
+      <image src='{{mediaPrefix+item.thumbnail}}' mode='aspectFill' wx:for='{{photos}}' wx:key='photo'></image>
+    </view>
+  </view>
+
+</view>

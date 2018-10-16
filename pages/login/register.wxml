@@ -1,0 +1,132 @@
+<!-- 注册信息界面 -->
+
+<view class="register-page">
+
+  <view class='page-title'>
+    <text>完善信息领好礼</text>
+  </view>
+
+  <form bindsubmit="formCheck">
+
+    <view class='section-box'>
+      <view class="section">
+        <view class="section-title">姓名
+          <text>(必填)</text>
+        </view>
+        <input name="realname" placeholder="" />
+      </view>
+      <view class="section section-cal">
+        <view class="section-title">出生日期
+          <text>(必填)</text>
+        </view>
+        <picker name="birthday" mode="date" value="{{birthday}}" start="1970-01-01" end="2010-01-01" data-index="birthday" bindchange="pickerChange">
+          <view class="picker">
+            {{birthday}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-gap">
+        <view class="section-title">性别
+          <text>(必填)</text>
+        </view>
+        <picker name="gender" data-index="userSexIndex" bindchange="pickerChange" value="{{userSexIndex}}" range="{{sex}}">
+          <view class="picker">
+            {{sex[userSexIndex]}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="section">
+        <view class="section-title">联系电话
+          <text>(必填)</text>
+        </view>
+        <input type="number" name="mobile" placeholder="" />
+      </view>
+
+      <view class="section">
+        <view class="section-title">所在地区
+          <text>(必填)</text>
+        </view>
+        <picker name="region" mode="region" data-index="region" bindchange="pickerChange" value="{{region}}">
+          <view class="picker">
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+
+    <!-- 宝妈宝爸 -->
+    <view class='section-box' wx:if="{{roleIndex == 0}}">
+      <view class="section section-gap">
+        <view class="section-title">当前身份
+          <text>(必填)</text>
+        </view>
+        <picker bindchange="bindIdentityChange" value="{{roleIndex}}" range="{{role}}" disabled>
+          <view class="picker identity-picker">
+            {{role[roleIndex]}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-cal">
+        <view class="section-title">宝宝生日
+          <text>(必填)</text>
+        </view>
+        <picker name="babybirthday" mode="date" value="{{babyBirthday}}" start="2015-01-01" end="{{nowDate}}" data-index="babyBirthday" bindchange="pickerChange">
+          <view class="picker">
+            {{babyBirthday}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-gap">
+        <view class="section-title">宝宝性别
+          <text>(必填)</text>
+        </view>
+        <picker name="babygender" data-index="babySexIndex" bindchange="pickerChange" value="{{babySexIndex}}" range="{{sex}}">
+          <view class="picker">
+            {{sex[babySexIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 加盟 -->
+    <view class='section-box' wx:if="{{roleIndex == 1}}">
+      <view class="section section-gap">
+        <view class="section-title">当前身份
+          <text>(必填)</text>
+        </view>
+        <picker name="role" value="{{roleIndex}}" range="{{role}}" disabled>
+          <view class="picker identity-picker">
+            {{role[roleIndex]}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-gap">
+        <view class="section-title">当前状态
+          <text>(必填)</text>
+        </view>
+        <picker name="joinstate" data-index="joinstateIndex" bindchange="pickerChange" value="{{joinstate[joinstateIndex]}}" range="{{joinstate}}">
+          <view class="picker">
+            {{joinstate[joinstateIndex]}}
+          </view>
+        </picker>
+      </view>
+      <view class="section section-gap">
+        <view class="section-title">预计投入
+          <text>(必填)</text>
+        </view>
+        <picker name="invest" data-index="investIndex" bindchange="pickerChange" value="{{invest[investIndex]}}" range="{{invest}}">
+          <view class="picker">
+            {{invest[investIndex]}}
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <view class="btn-area">
+      <button formType="submit" loading='{{btnLoading}}' disabled="{{btnLoading}}">进入小程序</button>
+    </view>
+  </form>
+
+</view>
