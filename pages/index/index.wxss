@@ -41,8 +41,11 @@ page {
   bottom: 8rpx;
 }
 
-.navbar .cur::after {
+.navbar .cur text {
   background-color: #34b36c;
+  color: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 50px;
 }
 
 .navbar radio {
@@ -381,4 +384,12 @@ video, .video-masker {
   left: 0;
   top: 0;
   z-index: 9999;
+}
+
+.job-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 0 20rpx;
 }

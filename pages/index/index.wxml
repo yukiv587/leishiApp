@@ -3,7 +3,8 @@
 
   <radio-group class="navbar radio-group" bindchange="navChange">
     <label class="radio {{navIndex == index ? 'cur' : ''}}" wx:for="{{navs}}" wx:key="navs">
-      <radio value="{{index}}" checked="{{index==navIndex}}" />{{item}}
+      <radio value="{{index}}" checked="{{index==navIndex}}" />
+      <text>{{item}}</text>
     </label>
   </radio-group>
 
@@ -23,7 +24,6 @@
 
     <!-- 服务项目 -->
     <view class='column-body service-body' hidden='{{navIndex !=0}}'>
-      <view class='column-title service-title'>服务项目</view>
       <view class='service-box'>
         <view class='service-item' wx:for="{{services}}" wx:key="services" data-scid="{{index}}" bindtap="toService">
           <image src='../../images/index/{{item.icon}}' mode='widthFix'></image>
@@ -32,18 +32,25 @@
       </view>
     </view>
 
-    <!-- 关于我们 -->
-    <view class='column-body about-body' hidden='{{navIndex ==0}}'>
-      <navigator url="/pages/index/about/about">
-        <image src='../../images/index/about-icon.png' mode='widthFix'></image>
-      </navigator>
-      <navigator url="/pages/index/about/contact">
-        <image src='../../images/index/contact-icon.png' mode='widthFix'></image>
-      </navigator>
+    <!-- 找好工作 -->
+    <view class='column-body service-body' hidden='{{navIndex ==0}}'>
+      <view class='service-box'>
+        <view class='service-item job-item' hover-class="none" data-content="{{job.content}}" bindtap='toJob'>
+          <image src='../../images/index/job-icon1.png' mode='widthFix'></image>
+          <text>招聘公告</text>
+        </view>
+        <view class='service-item job-item' hover-class="none" data-datail="{{skill}}" bindtap='toTrain'>
+          <image src='../../images/index/job-icon2.png' mode='widthFix'></image>
+          <text>培训课程</text>
+        </view>
+        <navigator class='service-item job-item' hover-class="none" url="/pages/index/about/about">
+          <image src='../../images/index/job-icon3.png' mode='widthFix'></image>
+          <text>了解我们</text>
+        </navigator>
+      </view>
     </view>
 
     <!-- 热门服务 -->
-
     <view class='column-body hot-service-body' hidden='{{navIndex !=0}}' wx:if="{{hot_services.length}}">
       <view class='column-title hot-service-title'>
         <view class='title-icon'></view>
@@ -117,7 +124,7 @@
         {{job.name}}
       </view>
       <view class='column-main'>
-        <image src='{{mediaPrefix + job.thumbnail}}' mode='widthFix' data-content="{{job.content}}" bindtap='toJob'></image>
+        <image src='{{mediaPrefix + job.thumbnail}}' mode='widthFix' data-content="{{job.content}}" bindtap='toJob' wx:if="{{job.thumbnail}}"></image>
         <button class="read-more" size="mini" plain data-content="{{job.content}}" bindtap='toJob'> 查看招聘职位 </button>
       </view>
     </view>

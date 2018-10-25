@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navs: ['宝妈宝爸', '我要加盟', '找好工作'],
+    navs: ['我要服务', '我要加盟', '找好工作'],
     navIndex: 0,
 
     videos: [],
@@ -300,7 +300,7 @@ Page({
   //播放视频
   playVideo() {
     this.setData({
-      showVideo: true
+      //showVideo: true
     })
   }
 
