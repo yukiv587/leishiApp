@@ -35,18 +35,26 @@
     <!-- 找好工作 -->
     <view class='column-body service-body' hidden='{{navIndex ==0}}'>
       <view class='service-box'>
-        <view class='service-item job-item' hover-class="none" data-content="{{job.content}}" bindtap='toJob'>
+        <view class='service-item' data-link="index/join/index?navIndex=0" bindtap="linkTo" hidden="{{navIndex !=1}}">
+          <image src='../../images/index/join-icon1.png' mode='widthFix'></image>
+          <text>门店加盟</text>
+        </view>
+        <view class='service-item' data-link="index/project/index" bindtap="linkTo" hidden="{{navIndex !=1}}">
+          <image src='../../images/index/join-icon2.png' mode='widthFix'></image>
+          <text>项目加盟</text>
+        </view>
+        <view class='service-item' data-content="{{job.content}}" bindtap='toJob' hidden="{{navIndex !=2}}">
           <image src='../../images/index/job-icon1.png' mode='widthFix'></image>
           <text>招聘公告</text>
         </view>
-        <view class='service-item job-item' hover-class="none" data-datail="{{skill}}" bindtap='toTrain'>
+        <view class='service-item' data-datail="{{skill}}" bindtap='toTrain'>
           <image src='../../images/index/job-icon2.png' mode='widthFix'></image>
           <text>培训课程</text>
         </view>
-        <navigator class='service-item job-item' hover-class="none" url="/pages/index/about/about">
+        <view class='service-item' data-link="index/about/about" bindtap="linkTo">
           <image src='../../images/index/job-icon3.png' mode='widthFix'></image>
-          <text>了解我们</text>
-        </navigator>
+          <text>了解雷氏</text>
+        </view>
       </view>
     </view>
 
@@ -58,7 +66,7 @@
       </view>
       <view class='column-main'>
         <service-group list='{{hot_services}}' mediaPrefix="{{mediaPrefix}}"></service-group>
-        <button class="read-more" size="mini" plain data-link="index/service/index" bindtap="linkTo"> 查看全部服务 </button>
+        <button class="read-more" size="mini" plain data-link="index/service/index" bindtap="linkTo"> 查看更多 </button>
       </view>
     </view>
 
@@ -74,7 +82,7 @@
           <view class='title'>{{item.name}}</view>
           <view class='desc'>{{item.description}}</view>
         </view>
-        <button class="read-more" size="mini" plain data-link="index/product/index" bindtap="linkTo"> 查看全部产品 </button>
+        <button class="read-more" size="mini" plain data-link="index/product/index" bindtap="linkTo"> 查看更多 </button>
       </view>
     </view>
 
@@ -113,7 +121,7 @@
           <image src='{{mediaPrefix + item.thumbnail}}' mode='widthFix'></image>
           <view class='title'>{{item.title}}</view>
         </view>
-        <button class="read-more" size="mini" plain data-link="index/project/index" bindtap="linkTo"> 查看全部项目 </button>
+        <button class="read-more" size="mini" plain data-link="index/project/index" bindtap="linkTo"> 查看更多 </button>
       </view>
     </view>
 
@@ -125,7 +133,7 @@
       </view>
       <view class='column-main'>
         <image src='{{mediaPrefix + job.thumbnail}}' mode='widthFix' data-content="{{job.content}}" bindtap='toJob' wx:if="{{job.thumbnail}}"></image>
-        <button class="read-more" size="mini" plain data-content="{{job.content}}" bindtap='toJob'> 查看招聘职位 </button>
+        <button class="read-more" size="mini" plain data-content="{{job.content}}" bindtap='toJob'> 查看更多 </button>
       </view>
     </view>
 
@@ -139,11 +147,11 @@
         <view class='column-item skill-item' wx:for="{{skill}}" wx:key="skill" data-datail="{{skill}}" bindtap='toTrain' data-index='{{index}}'>
           <image src='{{mediaPrefix + item.articles[0].thumbnail}}' mode='aspectFit'></image>
           <view class='content'>
-            <view class='title'>{{item.articles[0].title}}</view>
+            <view class='title'><text>{{item.articles[0].title}}</text></view>
             <view class='desc'>{{item.articles[0].description}}</view>
           </view>
         </view>
-        <button class="read-more" size="mini" plain data-datail="{{skill}}" bindtap='toTrain'> 查看更多内容 </button>
+        <button class="read-more" size="mini" plain data-datail="{{skill}}" bindtap='toTrain'> 查看更多 </button>
       </view>
     </view>
 
