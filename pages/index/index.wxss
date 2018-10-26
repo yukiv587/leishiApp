@@ -96,13 +96,39 @@ video, .video-masker {
 
 .column-title {
   font-size: 34rpx;
-  color: #4d4d4d;
+  /* color: #4d4d4d;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30rpx 0 20rpx;
   border-bottom: 2rpx solid #ebebeb;
-  margin-bottom: 20rpx;
+  margin-bottom: 20rpx; */
+  display: table;
+  white-space: nowrap;
+  height: auto;
+  overflow: hidden;
+  line-height: 1;
+  text-align: center;
+  padding: 10px 0;
+  color: #666;
+}
+
+.column-title:after, .column-title:before {
+  content: '';
+  display: table-cell;
+  position: relative;
+  top: 50%;
+  width: 50%;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABaAAAAACCAYAAACuTHuKAAAAGXRFW…GBJQby/mUcJn5sJXQmOQMAAAAAAJqt+2prAAAAAACg2xdgANk6BEVuJgyMAAAAAElFTkSuQmCC);
+}
+
+.column-title:before {
+    background-position: right 1em top 50%;
+}
+
+.column-title:after {
+    background-position: left 1em top 50%;
 }
 
 .column-main {
@@ -272,24 +298,20 @@ video, .video-masker {
 }
 
 .shop-join-body {
-  padding: 0 20rpx 20rpx;
+  padding: 0 40rpx 20rpx;
 }
 
 .shop-join-body .column-main {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
 }
 
 .shop-join-body navigator {
-  display: block;
-  width: 230rpx;
-  height: 222rpx;
+  width: 100%;
+  margin-bottom: 20rpx;
 }
 
 .shop-join-body image {
-  width: 230rpx;
-  height: 222rpx;
+  width: 100%;
+  height: auto;
 }
 
 .project-item {
@@ -326,24 +348,25 @@ video, .video-masker {
   margin-bottom: 12rpx;
 }
 
-.skill-item .title{
+.skill-item .title {
   margin-bottom: 20rpx;
 }
 
-.skill-item .title text{
+.skill-item .title text {
   color: #fff;
   padding: 10rpx 20rpx;
   border-radius: 50rpx;
 }
 
-.skill-item:nth-child(1) .title text{
+.skill-item:nth-child(1) .title text {
   background-color: #ff7575;
 }
 
-.skill-item:nth-child(2) .title text{
+.skill-item:nth-child(2) .title text {
   background-color: #efc152;
 }
-.skill-item:nth-child(3) .title text{
+
+.skill-item:nth-child(3) .title text {
   background-color: #35b36c;
 }
 
@@ -389,4 +412,13 @@ video, .video-masker {
   left: 0;
   top: 0;
   z-index: 9999;
+}
+
+.contact-body {
+  font-size: 0;
+  margin-bottom: 20rpx;
+}
+
+.contact-body image {
+  width: 100%;
 }

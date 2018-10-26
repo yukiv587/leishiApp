@@ -8,7 +8,7 @@
   <view class='list'>
     <view class='list-inner'>
       <service-group list='{{services}}' mediaPrefix="{{mediaPrefix}}" wx:if="{{services.length > 0}}"></service-group>
-      <image wx:else src='../../../images/index/yuesao.png' mode='widthFix'></image>
+      <image wx:else src='../../../images/index/yuesao.jpg' mode='widthFix' class='yuesao'></image>
     </view>
   </view>
 </view>

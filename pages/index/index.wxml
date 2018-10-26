@@ -97,11 +97,16 @@
       </view>
     </view>
 
-    <!-- 门店加盟 -->
+    <!-- 联系我们 -->
+    <navigator url="/pages/index/about/contact" class="contact-body" hidden='{{navIndex ==-0}}'>
+      <image src='../../images/index/contact.png' mode='widthFix'></image>
+    </navigator>
+
+    <!-- 案例展示 -->
     <view class='column-body shop-join-body' hidden='{{navIndex !=1}}' wx:if="{{join.length}}">
       <view class='column-title shop-join-title'>
         <view class='title-icon'></view>
-        门店加盟
+        案例展示
       </view>
       <view class='column-main'>
         <navigator url="/pages/index/join/index?navIndex={{index}}" wx:for="{{join}}" wx:key="join">
@@ -137,6 +142,7 @@
       </view>
     </view>
 
+
     <!-- 我要学习技能 -->
     <view class='column-body skill-body' hidden='{{navIndex ==0}}' wx:if="{{skill.length}}">
       <view class='column-title'>
@@ -147,7 +153,9 @@
         <view class='column-item skill-item' wx:for="{{skill}}" wx:key="skill" data-datail="{{skill}}" bindtap='toTrain' data-index='{{index}}'>
           <image src='{{mediaPrefix + item.articles[0].thumbnail}}' mode='aspectFit'></image>
           <view class='content'>
-            <view class='title'><text>{{item.articles[0].title}}</text></view>
+            <view class='title'>
+              <text>{{item.articles[0].title}}</text>
+            </view>
             <view class='desc'>{{item.articles[0].description}}</view>
           </view>
         </view>
