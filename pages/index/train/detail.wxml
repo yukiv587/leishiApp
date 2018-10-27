@@ -1,0 +1,10 @@
+<!--pages/index/train/detail.wxml-->
+<view class='train-page'>
+  <view class='list'>
+    <view class='rich-content' wx:if='{{content}}'>
+      <rich-text nodes="{{content}}"></rich-text>
+      <view class='mask'></view>
+    </view>
+  </view>
+
+</view>

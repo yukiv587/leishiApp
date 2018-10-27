@@ -11,15 +11,27 @@
 
   <view class='tab tab-baby'>
 
+    <!-- 轮播 -->
+    <view class='banner'>
+      <swiper indicator-dots='{{item.length !=1}}' autoplay circular wx:for="{{banners}}" wx:key="banners" wx:if="{{item.length && index==navIndex}}">
+        <block wx:for="{{item}}" wx:key="banner">
+          <swiper-item data-content="{{item.content}}" bindtap='toProjectDetail'>
+            <image src="{{mediaPrefix + item.thumbnail}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
     <!-- 视频 -->
     <view class='video-body'>
-      <image class="video-bg" src='../../images/index-video-bg.png' mode='widthFix'></image>
-      <view class='video-box'>
-        <video wx:if="{{showVideo}}" id="myVideo" src="{{videoSrc}}" loop autoplay objectFit="fill" controls></video>
+      <!-- <image class="video-bg" src='../../images/index-video-bg.png' mode='widthFix'></image> -->
+      <view class='video-box' wx:for="{{videos}}" wx:key="videos" hidden="{{!(item && index ==navIndex)}}">
+        <video wx:if="{{showVideo}}" id="{{'video' + index}}" src="{{item}}" loop autoplay objectFit="fill" controls></video>
         <view class='video-masker flex-center' wx:else bindtap='playVideo'>
           <image class="video-bg" src='../../images/index/play-icon.png' mode='widthFix'></image>
         </view>
       </view>
+      <image class="wave" src='../../images/index/wave.png' mode='widthFix'></image>
     </view>
 
     <!-- 服务项目 -->
@@ -47,7 +59,7 @@
           <image src='../../images/index/job-icon1.png' mode='widthFix'></image>
           <text>招聘公告</text>
         </view>
-        <view class='service-item' data-datail="{{skill}}" bindtap='toTrain'>
+        <view class='service-item' data-link="index/train/list" bindtap='linkTo'>
           <image src='../../images/index/job-icon2.png' mode='widthFix'></image>
           <text>培训课程</text>
         </view>
@@ -58,11 +70,23 @@
       </view>
     </view>
 
+    <!-- 消息推送 -->
+    <view class='recommend-news'>
+      <view class="recommend-news-item" hover-class="navigator-hover">
+        <view class='icon-box'>
+          <image src='../../images/index/news-icon.png' mode='widthFix'></image>
+          消息推送
+        </view>
+        <view class='title' data-content="{{news[0].content}}" bindtap='toProjectDetail'>{{news[0].title}}</view>
+        <view class='arrow' data-link="index/news/list" bindtap="linkTo"><text>arrow</text></view>
+      </view>
+    </view>
+
     <!-- 热门服务 -->
     <view class='column-body hot-service-body' hidden='{{navIndex !=0}}' wx:if="{{hot_services.length}}">
       <view class='column-title hot-service-title'>
         <view class='title-icon'></view>
-        热门服务
+        <text>热门服务</text>
       </view>
       <view class='column-main'>
         <service-group list='{{hot_services}}' mediaPrefix="{{mediaPrefix}}"></service-group>
@@ -74,7 +98,7 @@
     <view class='column-body hot-product-body' hidden='{{navIndex !=0}}' wx:if="{{hot_products.length}}">
       <view class='column-title hot-product-title'>
         <view class='title-icon'></view>
-        热门产品
+        <text>热门产品</text>
       </view>
       <view class='column-main'>
         <view class='column-item hot-product-item' wx:for="{{hot_products}}" wx:key="hot" data-link="index/product/detail" data-content="{{item}}" bindtap="toProductDetail">
@@ -106,7 +130,7 @@
     <view class='column-body shop-join-body' hidden='{{navIndex !=1}}' wx:if="{{join.length}}">
       <view class='column-title shop-join-title'>
         <view class='title-icon'></view>
-        案例展示
+        <text>案例展示</text>
       </view>
       <view class='column-main'>
         <navigator url="/pages/index/join/index?navIndex={{index}}" wx:for="{{join}}" wx:key="join">
@@ -119,7 +143,7 @@
     <view class='column-body project-body' hidden='{{navIndex !=1}}' wx:if="{{project.articles.length}}">
       <view class='column-title project-title'>
         <view class='title-icon'></view>
-        我要找项目
+        <text>我要找项目</text>
       </view>
       <view class='column-main'>
         <view class='column-item project-item' wx:for="{{project.articles}}" wx:key="project" data-content="{{item.content}}" bindtap='toProjectDetail'>
@@ -134,7 +158,7 @@
     <view class='column-body job-body' hidden='{{navIndex !=2}}'>
       <view class='column-title'>
         <view class='title-icon'></view>
-        {{job.name}}
+        <text>{{job.name}}</text>
       </view>
       <view class='column-main'>
         <image src='{{mediaPrefix + job.thumbnail}}' mode='widthFix' data-content="{{job.content}}" bindtap='toJob' wx:if="{{job.thumbnail}}"></image>
@@ -147,24 +171,22 @@
     <view class='column-body skill-body' hidden='{{navIndex ==0}}' wx:if="{{skill.length}}">
       <view class='column-title'>
         <view class='title-icon'></view>
-        我要学习技能
+        <text>我要学技能</text>
       </view>
       <view class='column-main'>
-        <view class='column-item skill-item' wx:for="{{skill}}" wx:key="skill" data-datail="{{skill}}" bindtap='toTrain' data-index='{{index}}'>
-          <image src='{{mediaPrefix + item.articles[0].thumbnail}}' mode='aspectFit'></image>
+        <view class='column-item skill-item' wx:for="{{skill}}" wx:key="skill" data-datail="{{item.content}}" bindtap='toTrain' data-index='{{index}}'>
+          <image src='{{mediaPrefix + item.thumbnail}}' mode='aspectFit'></image>
           <view class='content'>
             <view class='title'>
-              <text>{{item.articles[0].title}}</text>
+              <text>{{item.title}}</text>
             </view>
-            <view class='desc'>{{item.articles[0].description}}</view>
+            <view class='desc'>{{item.description}}</view>
           </view>
         </view>
-        <button class="read-more" size="mini" plain data-datail="{{skill}}" bindtap='toTrain'> 查看更多 </button>
+        <button class="read-more" size="mini" plain data-link="index/train/list" bindtap="linkTo"> 查看更多 </button>
       </view>
     </view>
-
   </view>
-
 
   <view class='coupon-box' bindtap='hideCoupon'>
     <coupon id="coupon" content="{{couponContent}}"></coupon>

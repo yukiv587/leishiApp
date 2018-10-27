@@ -1,0 +1,23 @@
+/* pages/index/news/list.wxss */
+
+page {
+  background-color: #fff;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+  height: 90rpx;
+  border-bottom: 2rpx solid #ededed;
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  padding-right: 10rpx;
+}
+.time {
+  color: #ccc;
+}

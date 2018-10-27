@@ -24,13 +24,41 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "学习列表",
+					"pathName": "pages/index/train/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "联系我们",
+					"pathName": "pages/index/about/about",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "消息通知",
+					"pathName": "pages/index/news/list"
+				}
+			]
 		}
 	}
 }

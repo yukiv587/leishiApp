@@ -9,14 +9,13 @@ Page({
    */
   data: {
     navs: ['我要服务', '我要加盟', '找好工作'],
-    navIndex: 0,
+    navIndex: 1,
 
     videos: [],
     videoSrc: '',
     showVideo: false,
 
-    services: [
-      {
+    services: [{
         title: '月嫂',
         icon: 'service-icon1.png'
       },
@@ -34,8 +33,7 @@ Page({
       }
     ],
 
-    quality: [
-      {
+    quality: [{
         title: '绿色健康',
         icon: 'quality-icon1.png',
         desc: '产品优质健康可靠'
@@ -62,7 +60,9 @@ Page({
     skill: [],
     project: [],
     join: [],
-    job :[],
+    job: [],
+    banners: [],
+    news: [],
 
     couponContent: '',
     mediaPrefix: app.globalData.mediaPrefix,
@@ -72,17 +72,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
     app.loginPromise.then(() => {
       this.getMaindatas();
+      this.getNews();
     });
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
     //获得coupon组件
     this.coupon = this.selectComponent("#coupon");
@@ -101,7 +102,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     // let isRegistered = wx.getStorageSync('isRegistered') || false;
     // console.log(isRegistered);
     // if (!isRegistered) {
@@ -115,45 +116,58 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
   //导航切换
-  navChange: function (e) {
+  navChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
+
+    let video0 = wx.createVideoContext('video0');
+    let video1 = wx.createVideoContext('video1');
+    let video2 = wx.createVideoContext('video2');
+    let videos = [video0, video1, video2];
+
+    videos.forEach((item) => {
+      item.pause();
+    });
+
+    videos[e.detail.value].play();
+
 
     this.setData({
       navIndex: e.detail.value,
       videoSrc: this.data.videos[e.detail.value],
+      bannerCur: 0,
     })
 
 
@@ -194,13 +208,13 @@ Page({
   },
 
   //我要找项目详情
-  toProjectDetail(e){
+  toProjectDetail(e) {
     app.globalData.projectDetail = e.currentTarget.dataset.content;
     wx.navigateTo({
       url: '/pages/index/project/detail',
     })
   },
-  
+
   //技能培训详情
   toTrain(e) {
     app.globalData.trainDatail = e.currentTarget.dataset.datail;
@@ -210,7 +224,8 @@ Page({
       console.log(option);
     }
     wx.navigateTo({
-      url: '/pages/index/train/index' + option,
+      // url: '/pages/index/train/index' + option,
+      url: '/pages/index/train/detail',
     })
   },
 
@@ -250,7 +265,7 @@ Page({
           hot_products: res.data.hot_products,
           hot_services: res.data.hot_services,
           videos: [res.data.video1, res.data.video2, res.data.video3],
-          videoSrc: res.data.video1,
+          banners: [res.data.banners1, res.data.banners2, res.data.banners3],
         })
 
         this.formatData(res.data.cates);
@@ -266,9 +281,9 @@ Page({
     skill = project = join = joinData = job = [];
 
     data.map((item) => {
-      if (item.pid == '37') {
-        skill = [...skill, item]
-      }
+      // if (item.pid == '37') {
+      //   skill = [...skill, item]
+      // }
       if (item.id == '36') {
         project = item;
       }
@@ -283,6 +298,8 @@ Page({
         job = item;
         console.log(job);
       }
+
+      skill = data.find(n => n.id == '37').articles;
     });
 
     wx.setStorageSync('joinData', joinData);
@@ -300,8 +317,24 @@ Page({
   //播放视频
   playVideo() {
     this.setData({
-      //showVideo: true
+      showVideo: true
     })
+  },
+
+  //获取推送消息
+  getNews() {
+    app.http({
+      url: app.globalData.api.articles,
+      data: {
+        sid: 52
+      },
+      success: res => {
+        console.log(res);
+        this.setData({
+          news: res.data
+        })
+      }
+    });
   }
 
 })

@@ -1,0 +1,15 @@
+<!--pages/index/train/list.wxml-->
+<!-- 我要学习技能 列表-->
+<view class='column-body skill-body' wx:if="{{skills.length}}">
+  <view class='column-main'>
+    <view class='column-item skill-item' wx:for="{{skills}}" wx:key="skill" data-datail="{{item.content}}" bindtap='toTrain' data-index='{{index}}'>
+      <image src='{{mediaPrefix + item.thumbnail}}' mode='aspectFit'></image>
+      <view class='content'>
+        <view class='title'>
+          <text>{{item.title}}</text>
+        </view>
+        <view class='desc'>{{item.description}}</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -124,3 +124,12 @@ page {
   height: 100%;
   z-index: 9;
 }
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}

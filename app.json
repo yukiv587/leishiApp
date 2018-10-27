@@ -32,7 +32,10 @@
     "pages/index/join/shop",
     "pages/mine/order_logistics",
     "pages/index/project/index",
-    "pages/index/project/detail"
+    "pages/index/project/detail",
+    "pages/index/train/list",
+    "pages/index/news/list",
+    "pages/index/train/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

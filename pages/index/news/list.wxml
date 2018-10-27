@@ -1,0 +1,9 @@
+<!--pages/index/news/list.wxml-->
+<view class='news-list-page'>
+  <view class='list'>
+    <view class='item' wx:for="{{news}}" wx:key="news" hover-class="navigator-hover" data-content="{{item.content}}" bindtap='toDetail'>
+      <view class='title ellipsis'>{{item.title}}</view>
+      <view class='time'>{{item.time}}</view>
+    </view>
+  </view>
+</view>

@@ -28,6 +28,7 @@ const api = {
   services: apiPrefix + 'services',
   projects: apiPrefix + 'projects',
   articles: apiPrefix + 'articles',
+  acate: apiPrefix + 'acate'
 }
 
 App({

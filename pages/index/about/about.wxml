@@ -1,6 +1,6 @@
 <!--pages/index/about.wxml-->
 
-<view class='about-page'>
+<!-- <view class='about-page'>
   <view class='top'>
     <image class="banner" src='../../../images/index/about-banner.png' mode='widthFix'></image>
 
@@ -16,6 +16,39 @@
     <view class='photo-box'>
       <image src='{{mediaPrefix+item.thumbnail}}' mode='aspectFill' wx:for='{{photos}}' wx:key='photo'></image>
     </view>
+  </view>
+
+</view> -->
+
+
+<view class='about-page'>
+  <view class='nav'>
+    <navbar list='{{navs}}' navIndex='{{navIndex}}' bind:navChange="navChange"></navbar>
+  </view>
+
+  <view class='list'>
+
+    <view class='rich-content' wx:if='{{content}}' wx:if="{{navIndex==0}}">
+      <rich-text nodes="{{content}}"></rich-text>
+      <view class='mask'></view>
+    </view>
+
+    <view class='photo' wx:if="{{navIndex==1}}">
+      <view class='photo-box' wx:for='{{photos}}' wx:key='photo' wx:if="{{photos.length}}">
+        <image src='{{mediaPrefix+item.thumbnail}}' mode='aspectFill'></image>
+        <view class='title'>{{item.title}}</view>
+      </view>
+    </view>
+
+    <view class='video' wx:if="{{navIndex==2}}">
+      <view class='video-item' wx:for="{{videos}}" wx:key='videos' wx:if="{{item.thumbnail}}">
+        <video id="{{'video' + index}}" src="{{mediaPrefix + item.thumbnail}}" objectFit="fill" controls data-id="{{'video' + index}}" data-index="{{index}}" bindplay="bindplay"></video>
+        <view class='title'>{{item.title}}</view>
+      </view>
+    </view>
+
+    <!-- 页面施工中 -->
+    <building wx:if="{{(isLoad && (navIndex==0 && !content) ||(navIndex==1 && !photos.length)||(navIndex==2 && !videos.length))}}"></building>
   </view>
 
 </view>

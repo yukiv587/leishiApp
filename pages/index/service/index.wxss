@@ -13,7 +13,7 @@
 
 .list-inner {
   background-color: #fff;
-  padding: 20rpx 0;
+  padding: 20rpx 30rpx;
 }
 
 .yuesao {
