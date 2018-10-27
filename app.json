@@ -35,7 +35,8 @@
     "pages/index/project/detail",
     "pages/index/train/list",
     "pages/index/news/list",
-    "pages/index/train/detail"
+    "pages/index/train/detail",
+    "pages/index/job/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

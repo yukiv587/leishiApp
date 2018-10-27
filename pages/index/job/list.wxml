@@ -1,0 +1,15 @@
+<!--pages/index/job/list.wxml-->
+<view class='job-list-page'>
+  <view class='list' wx:for="{{jobs}}" wx:key="job">
+    <view class='item'>
+      <image src='{{mediaPrefix + item.thumbnail}}' mode='aspectFit'></image>
+      <view class='content'>
+        <view class='title'>
+          <text>{{item.title}}</text>
+        </view>
+        <view class='desc'>{{item.description}}</view>
+        <view class='time'>发布时间：{{item.time}}</view>
+      </view>
+    </view>
+  </view>
+</view>

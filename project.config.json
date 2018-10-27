@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -56,7 +56,14 @@
 				{
 					"id": -1,
 					"name": "消息通知",
-					"pathName": "pages/index/news/list"
+					"pathName": "pages/index/news/list",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "招聘列表",
+					"pathName": "pages/index/job/list",
+					"query": ""
 				}
 			]
 		}
