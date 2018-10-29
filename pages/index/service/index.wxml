@@ -11,4 +11,7 @@
       <image wx:else src='../../../images/index/yuesao.jpg' mode='widthFix' class='yuesao'></image>
     </view>
   </view>
+
+  <!-- 悬停电话按钮 -->
+  <call></call>
 </view>

@@ -51,4 +51,6 @@
     <building wx:if="{{(isLoad && (navIndex==0 && !content) ||(navIndex==1 && !photos.length)||(navIndex==2 && !videos.length))}}"></building>
   </view>
 
+  <!-- 悬停电话按钮 -->
+  <call></call>
 </view>

@@ -2,6 +2,7 @@
   "usingComponents": {
     "service-group": "/components/service_group",
     "navbar": "/components/navbar",
-    "coupon": "/components/coupon"
+    "coupon": "/components/coupon",
+    "call" : "/components/call"
   }
 }

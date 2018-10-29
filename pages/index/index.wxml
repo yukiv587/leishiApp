@@ -55,7 +55,7 @@
           <image src='../../images/index/join-icon2.png' mode='widthFix'></image>
           <text>项目加盟</text>
         </view>
-        <view class='service-item' data-content="{{job.content}}" bindtap='toJob' hidden="{{navIndex !=2}}">
+        <view class='service-item' data-link="index/job/list" bindtap="linkTo" hidden="{{navIndex !=2}}">
           <image src='../../images/index/job-icon1.png' mode='widthFix'></image>
           <text>招聘公告</text>
         </view>
@@ -78,7 +78,9 @@
           消息推送
         </view>
         <view class='title' data-content="{{news[0].content}}" bindtap='toProjectDetail'>{{news[0].title}}</view>
-        <view class='arrow' data-link="index/news/list" bindtap="linkTo"><text>arrow</text></view>
+        <view class='arrow' data-link="index/news/list" bindtap="linkTo">
+          <text>arrow</text>
+        </view>
       </view>
     </view>
 
@@ -127,15 +129,16 @@
     </navigator>
 
     <!-- 案例展示 -->
-    <view class='column-body shop-join-body' hidden='{{navIndex !=1}}' wx:if="{{join.length}}">
+    <view class='column-body shop-join-body' hidden='{{navIndex !=1}}' wx:if="{{cases.length}}">
       <view class='column-title shop-join-title'>
         <view class='title-icon'></view>
         <text>案例展示</text>
       </view>
       <view class='column-main'>
-        <navigator url="/pages/index/join/index?navIndex={{index}}" wx:for="{{join}}" wx:key="join">
+        <navigator data-content="{{item.content}}" bindtap='toProjectDetail' wx:for="{{cases}}" wx:key="cases">
           <image src='{{mediaPrefix + item.thumbnail}}' mode='widthFix'></image>
         </navigator>
+        <button class="read-more" size="mini" plain data-link="index/cases/list" bindtap="linkTo"> 查看更多 </button>
       </view>
     </view>
 
@@ -161,8 +164,8 @@
         <text>{{job.name}}</text>
       </view>
       <view class='column-main'>
-        <image src='{{mediaPrefix + job.thumbnail}}' mode='widthFix' data-content="{{job.content}}" bindtap='toJob' wx:if="{{job.thumbnail}}"></image>
-        <button class="read-more" size="mini" plain data-content="{{job.content}}" bindtap='toJob'> 查看更多 </button>
+        <image src='{{mediaPrefix + job.thumbnail}}' mode='widthFix' data-link="index/job/list" bindtap="linkTo" wx:if="{{job.thumbnail}}"></image>
+        <button class="read-more" size="mini" plain data-link="index/job/list" bindtap="linkTo"> 查看更多 </button>
       </view>
     </view>
 
@@ -192,5 +195,7 @@
     <coupon id="coupon" content="{{couponContent}}"></coupon>
   </view>
 
+  <!-- 悬停电话按钮 -->
+  <call></call>
 
 </view>

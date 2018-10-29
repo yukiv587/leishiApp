@@ -305,6 +305,7 @@ video, .video-masker {
 .shop-join-body navigator {
   width: 100%;
   margin-bottom: 20rpx;
+  font-size: 0;
 }
 
 .shop-join-body image {

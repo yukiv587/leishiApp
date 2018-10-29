@@ -1,0 +1,9 @@
+/* components/call.wxss */
+.call-icon {
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  right: 20rpx;
+  top: 80%;
+  z-index: 99;
+}

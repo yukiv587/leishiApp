@@ -73,15 +73,15 @@ page {
   border-radius: 50rpx;
 }
 
-.skill-item:nth-child(1) .title text {
+.skill-item:nth-child(3n+1) .title text {
   background-color: #ff7575;
 }
 
-.skill-item:nth-child(2) .title text {
+.skill-item:nth-child(3n+2) .title text {
   background-color: #efc152;
 }
 
-.skill-item:nth-child(3) .title text {
+.skill-item:nth-child(3n+3) .title text {
   background-color: #35b36c;
 }
 

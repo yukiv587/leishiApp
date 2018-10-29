@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "building": "/components/building",
     "call": "/components/call"
   }
 }

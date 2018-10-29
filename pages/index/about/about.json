@@ -3,6 +3,8 @@
   "navigationBarTitleText": "了解我们",
   "usingComponents": {
     "building": "/components/building",
-    "navbar": "/components/navbar"
+    "navbar": "/components/navbar",
+    "call": "/components/call"
+    
   }
 }

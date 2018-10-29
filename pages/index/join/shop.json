@@ -1,3 +1,9 @@
 {
-  "navigationBarTitleText": "加盟详情"
+  "navigationBarTitleText": "加盟详情",
+  "usingComponents": {
+    "service-group": "/components/service_group",
+    "navbar": "/components/navbar",
+    "coupon": "/components/coupon",
+    "call": "/components/call"
+  }
 }

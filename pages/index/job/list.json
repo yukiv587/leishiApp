@@ -1,1 +1,7 @@
-{}
+{
+  "navigationBarTitleText": "招聘公告",
+  "usingComponents": {
+    "building": "/components/building",
+    "call": "/components/call"
+  }
+}

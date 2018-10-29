@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "门店加盟",
   "usingComponents": {
-    "navbar": "/components/navbar"
+    "navbar": "/components/navbar",
+    "call": "/components/call"
   }
 }

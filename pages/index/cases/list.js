@@ -1,20 +1,20 @@
-// pages/index/job/index.js
-const app = getApp();
+// pages/index/cases/list.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    content : '',
+    cases : [],
+    mediaPrefix: getApp().globalData.mediaPrefix
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      content: app.globalData.jobDatail,
+    getApp().loginPromise.then(() => {
+      this.getList();
     });
   },
 
@@ -66,4 +66,29 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  //获取列表
+  getList() {
+    getApp().http({
+      url: getApp().globalData.api.articles,
+      data: {
+        sid: 58,
+      },
+      success: res => {
+        this.setData({
+          cases: res.data,
+        });
+      }
+    });
+  },
+
+  //技能培训详情
+  toTrain(e) {
+    getApp().globalData.projectDetail = e.currentTarget.dataset.detail;
+    wx.navigateTo({
+      url: '/pages/index/project/detail',
+    })
+  },
+
+
 })

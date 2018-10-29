@@ -1,15 +1,20 @@
 <!--pages/index/job/list.wxml-->
 <view class='job-list-page'>
   <view class='list' wx:for="{{jobs}}" wx:key="job">
-    <view class='item'>
+
+    <view class='item' data-content="{{item.content}}" bindtap='toDetail'>
       <image src='{{mediaPrefix + item.thumbnail}}' mode='aspectFit'></image>
       <view class='content'>
-        <view class='title'>
-          <text>{{item.title}}</text>
+        <view class='title-box'>
+          <view class='title ellipsis'>{{item.title}}</view>
+          <view class='desc ellipsis-clamp2'>{{item.description}}</view>
         </view>
-        <view class='desc'>{{item.description}}</view>
         <view class='time'>发布时间：{{item.time}}</view>
       </view>
     </view>
+
   </view>
+
+  <!-- 悬停电话按钮 -->
+  <call></call>
 </view>

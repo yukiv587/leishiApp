@@ -16,43 +16,43 @@ Page({
     showVideo: false,
 
     services: [{
-        title: '月嫂',
-        icon: 'service-icon1.png'
-      },
-      {
-        title: '催乳服务',
-        icon: 'service-icon2.png'
-      },
-      {
-        title: '产后调养',
-        icon: 'service-icon3.png'
-      },
-      {
-        title: '小儿推拿',
-        icon: 'service-icon4.png'
-      }
+      title: '月嫂',
+      icon: 'service-icon1.png'
+    },
+    {
+      title: '催乳服务',
+      icon: 'service-icon2.png'
+    },
+    {
+      title: '产后调养',
+      icon: 'service-icon3.png'
+    },
+    {
+      title: '小儿推拿',
+      icon: 'service-icon4.png'
+    }
     ],
 
     quality: [{
-        title: '绿色健康',
-        icon: 'quality-icon1.png',
-        desc: '产品优质健康可靠'
-      },
-      {
-        title: '贴心客服',
-        icon: 'quality-icon2.png',
-        desc: '7*24小时服务',
-      },
-      {
-        title: '信用认证',
-        icon: 'quality-icon3.png',
-        desc: '实名信用更放心',
-      },
-      {
-        title: '安全无忧',
-        icon: 'quality-icon4.png',
-        desc: '技师1对1贴心服务'
-      }
+      title: '绿色健康',
+      icon: 'quality-icon1.png',
+      desc: '产品优质健康可靠'
+    },
+    {
+      title: '贴心客服',
+      icon: 'quality-icon2.png',
+      desc: '7*24小时服务',
+    },
+    {
+      title: '信用认证',
+      icon: 'quality-icon3.png',
+      desc: '实名信用更放心',
+    },
+    {
+      title: '安全无忧',
+      icon: 'quality-icon4.png',
+      desc: '技师1对1贴心服务'
+    }
     ],
 
     hot_products: [],
@@ -63,6 +63,7 @@ Page({
     job: [],
     banners: [],
     news: [],
+    cases: [],
 
     couponContent: '',
     mediaPrefix: app.globalData.mediaPrefix,
@@ -72,7 +73,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
 
     app.loginPromise.then(() => {
       this.getMaindatas();
@@ -83,7 +84,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
     //获得coupon组件
     this.coupon = this.selectComponent("#coupon");
@@ -97,12 +98,14 @@ Page({
     } else {
       this.playVideo();
     }
+
+    this.videoChange(this.data.navIndex);
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
     // let isRegistered = wx.getStorageSync('isRegistered') || false;
     // console.log(isRegistered);
     // if (!isRegistered) {
@@ -116,42 +119,53 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
 
   //导航切换
-  navChange: function(e) {
+  navChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
 
+    this.setData({
+      navIndex: e.detail.value,
+      videoSrc: this.data.videos[e.detail.value],
+      bannerCur: 0,
+    })
+
+    this.videoChange(e.detail.value);
+  },
+
+  //视频切换
+  videoChange(navIndex) {
     let video0 = wx.createVideoContext('video0');
     let video1 = wx.createVideoContext('video1');
     let video2 = wx.createVideoContext('video2');
@@ -160,17 +174,7 @@ Page({
     videos.forEach((item) => {
       item.pause();
     });
-
-    videos[e.detail.value].play();
-
-
-    this.setData({
-      navIndex: e.detail.value,
-      videoSrc: this.data.videos[e.detail.value],
-      bannerCur: 0,
-    })
-
-
+    videos[navIndex].play();
   },
 
   //跳转链接
@@ -266,6 +270,7 @@ Page({
           hot_services: res.data.hot_services,
           videos: [res.data.video1, res.data.video2, res.data.video3],
           banners: [res.data.banners1, res.data.banners2, res.data.banners3],
+          cases: res.data.cases,
         })
 
         this.formatData(res.data.cates);

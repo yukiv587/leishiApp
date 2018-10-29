@@ -3,6 +3,7 @@
   "usingComponents": {
     "building": "/components/building",
     "service-group": "/components/service_group",
-    "navbar": "/components/navbar"
+    "navbar": "/components/navbar",
+    "call": "/components/call"
   }
 }

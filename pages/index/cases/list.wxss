@@ -1,0 +1,57 @@
+/* pages/index/cases/list.wxss */
+.page {
+  padding: 0 30rpx;
+}
+.skill-item {
+  display: flex;
+  width: 100%;
+  margin-bottom: 12rpx;
+}
+
+.skill-item .title {
+  margin-bottom: 20rpx;
+}
+
+.skill-item .title text {
+  color: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 50rpx;
+}
+
+.skill-item:nth-child(3n+1) .title text {
+  background-color: #ff7575;
+}
+
+.skill-item:nth-child(3n+2) .title text {
+  background-color: #efc152;
+}
+
+.skill-item:nth-child(3n+3) .title text {
+  background-color: #35b36c;
+}
+
+.skill-body image {
+  width: 220rpx;
+  height: 220rpx;
+  background-color: gray;
+  flex-shrink: 0;
+}
+
+.skill-body  .content {
+  padding: 20rpx 30rpx 20rpx 20rpx;
+  flex: 1;
+}
+
+.skill-body .title {
+  font-size: 30rpx;
+  padding-bottom: 10rpx;
+}
+
+.skill-body .desc {
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,2 @@
+<!--components/call.wxml-->
+<image mode="widthFix" class="call-icon" src="../images/store/call-icon.png" bindtap="call"></image>

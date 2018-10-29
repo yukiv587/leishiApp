@@ -6,4 +6,6 @@
       <view class='time'>{{item.time}}</view>
     </view>
   </view>
+  <!-- 悬停电话按钮 -->
+  <call></call>
 </view>

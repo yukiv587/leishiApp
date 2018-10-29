@@ -1,0 +1,19 @@
+<!--pages/index/cases/list.wxml-->
+<view class='page'>
+  <view class='column-body skill-body' wx:if="{{cases.length}}">
+    <view class='column-main'>
+      <view class='column-item skill-item' wx:for="{{cases}}" wx:key="skill" data-detail="{{item.content}}" bindtap='toTrain' data-index='{{index}}'>
+        <image src='{{mediaPrefix + item.thumbnail}}' mode='aspectFit'></image>
+        <view class='content'>
+          <view class='title'>
+            <text>{{item.title}}</text>
+          </view>
+          <view class='desc'>{{item.description}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 悬停电话按钮 -->
+  <call></call>
+</view>

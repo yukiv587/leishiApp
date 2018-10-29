@@ -6,21 +6,9 @@ page {
 
 .item {
   display: flex;
-  align-items: center;
   font-size: 30rpx;
   padding: 0 30rpx;
-  height: 90rpx;
-  border-bottom: 2rpx solid #ededed;
-}
-
-.title {
-  flex: 1;
-  min-width: 0;
-  padding-right: 10rpx;
-}
-
-.time {
-  color: #ccc;
+  margin-bottom: 20rpx;
 }
 
 .item image {
@@ -31,6 +19,27 @@ page {
 }
 
 .item .content {
-  padding: 20rpx 30rpx 20rpx 20rpx;
+  padding: 10rpx 0 10rpx 20rpx;
   flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  margin-bottom: 10rpx;
+  background-color: #ededed;
+  border-radius: 20rpx;
+  padding: 5rpx 30rpx;
+  display: inline-block;
+}
+
+.desc {
+  font-size: 26rpx;
+}
+
+.time {
+  color: #ccc;
+  font-size: 24rpx;
 }

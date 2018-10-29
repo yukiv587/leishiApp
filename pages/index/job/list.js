@@ -84,5 +84,14 @@ Page({
         });
       }
     });
+  },
+
+
+  //详情
+  toDetail(e) {
+    getApp().globalData.projectDetail = e.currentTarget.dataset.content;
+    wx.navigateTo({
+      url: '/pages/index/project/detail',
+    })
   }
 })

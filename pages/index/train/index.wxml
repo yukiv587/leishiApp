@@ -13,5 +13,6 @@
     <!-- 页面施工中 -->
     <building wx:else></building>
   </view>
-
+  <!-- 悬停电话按钮 -->
+  <call></call>
 </view>
