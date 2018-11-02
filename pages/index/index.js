@@ -15,23 +15,7 @@ Page({
     videoSrc: '',
     showVideo: false,
 
-    services: [{
-      title: '月嫂',
-      icon: 'service-icon1.png'
-    },
-    {
-      title: '催乳服务',
-      icon: 'service-icon2.png'
-    },
-    {
-      title: '产后调养',
-      icon: 'service-icon3.png'
-    },
-    {
-      title: '小儿推拿',
-      icon: 'service-icon4.png'
-    }
-    ],
+    services: [],
 
     quality: [{
       title: '绿色健康',
@@ -282,8 +266,8 @@ Page({
   //处理分类数据
   formatData(data) {
 
-    let skill, project, join, joinData, job;
-    skill = project = join = joinData = job = [];
+    let skill, project, join, joinData, job, services;
+    skill = project = join = joinData = job = services = [];
 
     data.map((item) => {
       // if (item.pid == '37') {
@@ -304,6 +288,10 @@ Page({
         console.log(job);
       }
 
+      if (item.pid == '59') {
+        services = [...services,item];
+      }
+
       skill = data.find(n => n.id == '37').articles;
     });
 
@@ -316,13 +304,14 @@ Page({
       project,
       join,
       job,
+      services,
     })
   },
 
   //播放视频
   playVideo() {
     this.setData({
-      showVideo: true
+      // showVideo: true
     })
   },
 

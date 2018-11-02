@@ -37,9 +37,9 @@
     <!-- 服务项目 -->
     <view class='column-body service-body' hidden='{{navIndex !=0}}'>
       <view class='service-box'>
-        <view class='service-item' wx:for="{{services}}" wx:key="services" data-scid="{{index}}" bindtap="toService">
-          <image src='../../images/index/{{item.icon}}' mode='widthFix'></image>
-          <text>{{item.title}}</text>
+        <view class='service-item' wx:for="{{services}}" wx:key="services" data-content="{{item.content}}" bindtap='toProjectDetail'>
+          <image src='{{mediaPrefix + item.thumbnail}}' mode='widthFix'></image>
+          <text>{{item.name}}</text>
         </view>
       </view>
     </view>

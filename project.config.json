@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -70,6 +70,11 @@
 					"name": "案例列表",
 					"pathName": "pages/index/cases/list",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "服务列表",
+					"pathName": "pages/index/service/index"
 				}
 			]
 		}

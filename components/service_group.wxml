@@ -6,7 +6,8 @@
     <image src='{{mediaPrefix + item.image}}' mode='aspectFit'></image>
     <view class='title'>{{item.name}}</view>
     <view class='desc'>{{item.description}}</view>
-    <view class='price'>
-      <text>{{item.price}}元</text>起/60分钟</view>
+    <!-- <view class='price'>
+      <text>{{item.price}}元</text>起/60分钟
+    </view> -->
   </view>
 </view>

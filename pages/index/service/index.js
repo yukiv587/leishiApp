@@ -9,78 +9,102 @@ Page({
    */
   data: {
     navs: ['月嫂', '催乳服务', '产后调养', '小儿推拿'],
-    navIndex: 0,
+    navIndex: 2,
     services: [],
     mediaPrefix: app.globalData.mediaPrefix,
+    categories: [{
+        id: 0,
+        name: '全部服务'
+      },
+      {
+        id: 1,
+        name: '月嫂'
+      },
+      {
+        id: 2,
+        name: '催乳服务'
+      },
+      {
+        id: 3,
+        name: '产后调养'
+      },
+      {
+        id: 4,
+        name: '小儿推拿'
+      }
+    ],
+    cur_category: '全部服务',
+    filterShow: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    if (options.scid) {
-      this.setData({
-        navIndex: options.scid,
-      });
-      let scid = this.scidFormat(options.scid);
-      if (scid == 0) return false;
-      this.getServices(scid);
-    }
+  onLoad: function(options) {
+    // if (options.scid) {
+    //   this.setData({
+    //     navIndex: options.scid,
+    //   });
+    //   let scid = this.scidFormat(options.scid);
+    //   if (scid == 0) return false;
+    //   this.getServices(scid);
+    // }
+    this.getServices(0);
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
   /**
-  * 用户点击右上角分享
-  */
-  getServices: function (id) {
+   * 用户点击右上角分享
+   */
+  getServices: function(id) {
     app.http({
       url: app.globalData.api.services,
       data: {
@@ -88,7 +112,7 @@ Page({
       },
       success: res => {
         console.log(res);
-        if (res){
+        if (res) {
           this.setData({
             services: res.data,
           });
@@ -98,23 +122,23 @@ Page({
   },
 
   //切换导航
-  navChange(data) {
-    console.log('navIndex值为', data.detail)
-    let scid = data.detail;
+  radioChange(e) {
+    console.log('navIndex值为', e.detail.value)
+    let scid = e.detail.value;
     this.setData({
-      navIndex: data.detail
+      filterShow: false,
+      cur_category: this.data.categories.find(n => n.id == scid).name
     });
-
-    scid = this.scidFormat(scid);
-
-    if (scid == 0) return false;
 
     this.getServices(scid);
   },
 
-  //scid 处理
-  scidFormat(scid) {
-    return scid * 1 + 1;
+
+  //筛选框切换
+  toggleFilter() {
+    this.setData({
+      filterShow: !this.data.filterShow,
+    });
   }
 
 

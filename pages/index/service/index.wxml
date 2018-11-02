@@ -1,14 +1,30 @@
 <!--pages/index/service/index.wxml-->
 
 <view class='service-page'>
-  <view class='nav'>
+  <!-- <view class='nav'>
     <navbar list='{{navs}}' navIndex='{{navIndex}}' bind:navChange="navChange"></navbar>
+  </view> -->
+
+  <view class='filter-box'>
+    <view class='radio-group-box'>
+      <view class='cur-category' bindtap='toggleFilter'>
+        <view class='icon'>
+          <image src='../../../images/index/filter-icon.png'></image>
+          筛选</view>
+        {{cur_category}}
+      </view>
+      <radio-group class="radio-group {{filterShow ? 'active' : ''}}" bindchange="radioChange">
+        <label class="radio" wx:for="{{categories}}">
+          <radio value="{{item.id}}" checked="{{index==0}}" />{{item.name}}
+        </label>
+      </radio-group>
+    </view>
   </view>
 
   <view class='list'>
     <view class='list-inner'>
       <service-group list='{{services}}' mediaPrefix="{{mediaPrefix}}" wx:if="{{services.length > 0}}"></service-group>
-      <image wx:else src='../../../images/index/yuesao.jpg' mode='widthFix' class='yuesao'></image>
+      <view class='empty-box'>暂无数据</view>
     </view>
   </view>
 
