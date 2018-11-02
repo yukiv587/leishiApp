@@ -311,7 +311,7 @@ Page({
   //播放视频
   playVideo() {
     this.setData({
-      // showVideo: true
+      showVideo: true
     })
   },
 
