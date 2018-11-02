@@ -23,8 +23,8 @@
 
   <view class='list'>
     <view class='list-inner'>
-      <service-group list='{{services}}' mediaPrefix="{{mediaPrefix}}" wx:if="{{services.length > 0}}"></service-group>
-      <view class='empty-box'>暂无数据</view>
+      <service-group list='{{services}}' mediaPrefix="{{mediaPrefix}}" wx:if="{{services.length}}"></service-group>
+      <view class='empty-box' wx:if="{{!services.length && isLoad}}">暂无数据</view>
     </view>
   </view>
 

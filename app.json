@@ -38,7 +38,8 @@
     "pages/index/train/detail",
     "pages/index/job/list",
     "pages/index/cases/list",
-    "components/call"
+    "components/call",
+    "pages/index/join/list"
   ],
   "window": {
     "backgroundTextStyle": "light",

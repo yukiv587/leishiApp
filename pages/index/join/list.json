@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "门店展示列表",
+  "usingComponents": {
+    "service-group": "/components/service_group",
+    "navbar": "/components/navbar",
+    "coupon": "/components/coupon",
+    "call": "/components/call"
+  }
+}

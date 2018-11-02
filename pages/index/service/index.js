@@ -35,6 +35,7 @@ Page({
     ],
     cur_category: '全部服务',
     filterShow: false,
+    isLoad : false,
   },
 
   /**
@@ -70,7 +71,9 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    this.setData({
+      filterShow: false,
+    });
   },
 
   /**
@@ -127,7 +130,8 @@ Page({
     let scid = e.detail.value;
     this.setData({
       filterShow: false,
-      cur_category: this.data.categories.find(n => n.id == scid).name
+      cur_category: this.data.categories.find(n => n.id == scid).name,
+      isLoad : true,
     });
 
     this.getServices(scid);

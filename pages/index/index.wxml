@@ -47,7 +47,7 @@
     <!-- 找好工作 -->
     <view class='column-body service-body' hidden='{{navIndex ==0}}'>
       <view class='service-box'>
-        <view class='service-item' data-link="index/join/index?navIndex=0" bindtap="linkTo" hidden="{{navIndex !=1}}">
+        <view class='service-item' data-link="index/join/list" bindtap="linkTo" hidden="{{navIndex !=1}}">
           <image src='../../images/index/join-icon1.png' mode='widthFix'></image>
           <text>门店加盟</text>
         </view>
