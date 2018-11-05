@@ -3,10 +3,11 @@
 <view class='column-body skill-body' wx:if="{{skills.length}}">
   <view class='column-main'>
     <view class='column-item skill-item' wx:for="{{skills}}" wx:key="skill" data-datail="{{item.content}}" bindtap='toTrain' data-index='{{index}}'>
-      <image src='{{mediaPrefix + item.thumbnail}}' mode='aspectFit'></image>
+      <image src='{{mediaPrefix + item.thumbnail}}' mode='aspectFill'></image>
       <view class='content'>
         <view class='title'>
-          <text>{{item.title}}</text>
+          <text style='background-color:{{item.color}};color: #fff;' wx:if="{{item.color}}">{{item.title}}</text>
+          <text wx:else>{{item.title}}</text>
         </view>
         <view class='desc'>{{item.description}}</view>
       </view>
@@ -14,5 +15,5 @@
   </view>
 </view>
 
-  <!-- 悬停电话按钮 -->
-  <call></call>
+<!-- 悬停电话按钮 -->
+<call></call>
