@@ -26,7 +26,7 @@
     <view class='video-body'>
       <!-- <image class="video-bg" src='../../images/index-video-bg.png' mode='widthFix'></image> -->
       <view class='video-box' wx:for="{{videos}}" wx:key="videos" hidden="{{!(item && index ==navIndex)}}">
-        <video wx:if="{{showVideo}}" id="{{'video' + index}}" src="{{item}}" loop autoplay objectFit="fill" controls></video>
+        <video wx:if="{{showVideo}}" id="{{'video' + index}}" src="{{item}}" loop objectFit="fill" controls></video>
         <view class='video-masker flex-center' wx:else bindtap='playVideo'>
           <image class="video-bg" src='../../images/index/play-icon.png' mode='widthFix'></image>
         </view>

@@ -4,6 +4,7 @@
   height: 80rpx;
   position: fixed;
   right: 20rpx;
-  top: 80%;
+  top: 980rpx;
   z-index: 99;
+  display: none;
 }

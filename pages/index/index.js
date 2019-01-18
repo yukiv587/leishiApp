@@ -158,7 +158,7 @@ Page({
     videos.forEach((item) => {
       item.pause();
     });
-    videos[navIndex].play();
+    //videos[navIndex].play();
   },
 
   //跳转链接
